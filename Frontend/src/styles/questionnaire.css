@@ -1,0 +1,95 @@
+/* Container */
+.questionnaire-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9f9f9, #f0f4ff, #fff0f6);
+  padding: 20px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  max-width: 600px;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6c63ff, #ff6ec7);
+  transition: width 0.3s ease;
+}
+
+/* Question Box */
+.question-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.question-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.option-btn {
+  padding: 14px 20px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: #fafafa;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+  background: #f3f0ff;
+  border-color: #6c63ff;
+}
+
+.option-btn.selected {
+  background: #6c63ff;
+  color: #fff;
+  border-color: #6c63ff;
+}
+
+/* Next Button */
+.next-btn {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.next-btn:hover {
+  background: #5848d1;
+}
+
+.next-btn:disabled {
+  background: #c6c6c6;
+  cursor: not-allowed;
+}

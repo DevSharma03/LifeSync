@@ -1,0 +1,154 @@
+/* === Navbar === */
+.navbar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.navbar ul li {
+  margin: 1rem 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  transition: 0.3s;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.navbar ul li a:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* === Main Content === */
+.main-content {
+  margin-left: 250px; /* push content to the right of navbar */
+  padding: 2rem;
+  background: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* === Cards === */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  min-height: 180px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Left content (title + subtitle) */
+.card-left {
+  flex: 1;
+}
+
+.card-left h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.3rem;
+}
+
+.card-left p {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #6b7280;
+}
+
+/* Score Circle */
+.card-score {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Right Image */
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Overall Score Card === */
+.overall-score {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overall-score h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.overall-score .progress-bar {
+  width: 90%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.overall-score .progress-bar-fill {
+  height: 100%;
+  width: 70%; /* Example fill */
+  background: #ffffff;
+  border-radius: 6px;
+}
