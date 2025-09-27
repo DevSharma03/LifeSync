@@ -1,0 +1,228 @@
+/* =================================== */
+/* :ROOT VARIABLES            */
+/* =================================== */
+/* Centralized theme properties for easy customization */
+
+:root {
+  /* Colors */
+  --color-text-primary: #111418;
+  --color-text-secondary: #637588;
+  --color-background: #ffffff;
+  --color-surface: #ffffff; /* For cards and distinct sections */
+  --color-interface: #f0f2f4; /* For buttons, progress bars */
+  --color-border: #dce0e5;
+  --color-primary: #4799eb;
+  --color-primary-hover: #3b82f6;
+
+  /* Typography */
+  --font-primary: "Lexend", "Noto Sans", sans-serif;
+
+  /* Sizing & Spacing */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2.5rem; /* 40px */
+
+  /* Borders */
+  --border-radius-md: 0.75rem; /* 12px */
+  --border-radius-lg: 1rem; /* 16px */
+
+  /* Effects */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition-fast: 200ms ease-in-out;
+}
+
+/* =================================== */
+/* GENERAL LAYOUT            */
+/* =================================== */
+
+.mood-content-container {
+  position: relative;
+  width: 100%;
+  font-family: var(--font-primary);
+}
+
+.main-content {
+  padding: var(--spacing-xl);
+}
+
+section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.main-title {
+  color: var(--color-text-primary);
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-title {
+  color: var(--color-text-primary);
+  font-size: 1.375rem; /* 22px */
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-interface);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* =================================== */
+/* INFO SECTION              */
+/* =================================== */
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) 0;
+}
+
+.info-section-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-section-text {
+  width: 100%;
+  min-width: 18rem;
+}
+
+.info-section-title {
+  color: var(--color-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.info-section-description {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .info-section {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* =================================== */
+/* FEATURE CARD              */
+/* =================================== */
+
+.feature-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.feature-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-interface);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  transition: box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.feature-card-text {
+  flex-grow: 1;
+}
+
+.feature-card-title {
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.feature-card-description {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.feature-card-image {
+  border-radius: var(--border-radius-md);
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16 / 9;
+  margin-top: var(--spacing-md);
+  order: -1; /* Move image to top */
+}
+
+.btn {
+  cursor: pointer;
+  height: 2.25rem;
+  padding: 0 var(--spacing-md);
+  background-color: var(--color-interface);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius-md);
+  width: fit-content;
+  transition: background-color var(--transition-fast);
+  outline: none;
+}
+.btn:hover {
+  background-color: #e5e7eb;
+}
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-primary-hover);
+}
+
+/* =================================== */
+/* FLOATING ACTION BUTTON (FAB)     */
+/* =================================== */
+
+.fab {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast),
+    background-color var(--transition-fast);
+  outline: none;
+}
+.fab:hover {
+  transform: scale(1.1);
+  background-color: var(--color-primary-hover);
+}
+.fab:focus-visible {
+  box-shadow: 0 0 0 4px var(--color-primary);
+}

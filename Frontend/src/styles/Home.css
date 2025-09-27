@@ -1,154 +1,164 @@
-/* === Navbar === */
-.navbar {
-  width: 250px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #ffffff;
-  border-right: 1px solid #e5e7eb;
-  padding: 2rem 1rem;
+.content-area {
+  flex-grow: 1;
+  background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow-y: auto;
 }
 
-.navbar h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: #111827;
-}
-
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.navbar ul li {
-  margin: 1rem 0;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #374151;
-  transition: 0.3s;
-  display: block;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-}
-
-.navbar ul li a:hover {
-  background: #f3f4f6;
-  color: #111827;
-}
-
-/* === Main Content === */
-.main-content {
-  margin-left: 250px; /* push content to the right of navbar */
-  padding: 2rem;
-  background: #f9fafb;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* === Cards === */
-.card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 2rem;
+.top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
-  min-height: 180px;
+  padding: 1rem 2.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f2f4;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Left content (title + subtitle) */
-.card-left {
-  flex: 1;
-}
-
-.card-left h3 {
-  font-size: 1.4rem;
+.top-bar-title {
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
-  margin-bottom: 0.3rem;
+  margin: 0;
+  color: #111418;
 }
 
-.card-left p {
-  font-size: 0.95rem;
-  font-style: italic;
-  color: #6b7280;
-}
-
-/* Score Circle */
-.card-score {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #3b82f6);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.3rem;
+.top-bar-actions {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0 2rem;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  gap: 1.5rem;
 }
 
-/* Right Image */
-.card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.icon-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #f0f2f4;
+  color: #111418;
+  border: none;
+  border-radius: 9999px; /* Circular button */
 }
 
-/* === Overall Score Card === */
-.overall-score {
-  background: linear-gradient(135deg, #10b981, #34d399);
-  color: #ffffff;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 20px;
+.profile-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 9999px;
+}
+
+/* --- Main Content & Widgets --- */
+.main-content {
+  padding: 2.5rem;
+}
+
+.content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111418;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #111418;
+}
+
+.score-progress-wrapper, .key-area-card, .projection-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.score-progress-labels {
+  display: flex;
+  justify-content: space-between;
+}
+.score-progress-labels p:first-child { font-weight: 500; }
+.score-status { color: #637588; font-size: 0.875rem; }
+
+.progress-bar-background {
+  border-radius: 9999px;
+  background-color: #e9ecef;
+  margin: 0.75rem 0;
+}
+.progress-bar-foreground {
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #111418;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 cards per row */
+  gap: 1.5rem;
+}
+
+.key-area-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
-.overall-score h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
+.card-content { display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; }
+.card-text { flex-grow: 1; }
+.card-title { font-size: 1rem; font-weight: 700; }
+.card-description { color: #637588; font-size: 0.875rem; margin-top: 0.25rem; }
+
+.btn {
+  cursor: pointer;
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: #f0f2f4;
+  color: #111418;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  width: fit-content;
 }
 
-.overall-score .progress-bar {
-  width: 90%;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  overflow: hidden;
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
 }
 
-.overall-score .progress-bar-fill {
-  height: 100%;
-  width: 70%; /* Example fill */
-  background: #ffffff;
-  border-radius: 6px;
+/* Projection Card */
+.projection-card { display: flex; flex-direction: column; gap: 0.5rem; }
+.projection-label { font-weight: 500; }
+.projection-value { font-size: 32px; font-weight: 700; }
+.projection-timeline { display: flex; gap: 0.25rem; color: #637588; }
+.projection-change { color: #078838; font-weight: 500; }
+.chart-container { display: flex; flex-direction: column; gap: 1rem; padding-top: 1rem; }
+.chart-labels { display: flex; justify-content: space-around; font-size: 13px; font-weight: 700; color: #637588; }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .card-list {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+  .main-content {
+    padding: 1.5rem;
+  }
+  .top-bar {
+    padding: 1rem 1.5rem;
+  }
 }

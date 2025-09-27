@@ -1,5 +1,5 @@
-// src/components/Navbar.js
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FaTachometerAlt,
   FaHeartbeat,
@@ -13,16 +13,18 @@ import {
 import "../styles/Navbar.css";
 
 const navItems = [
-  { key: "dashboard", label: "Dashboard", Icon: FaTachometerAlt },
-  { key: "health", label: "Health", Icon: FaHeartbeat },
-  { key: "finance", label: "Finance", Icon: FaWallet },
-  { key: "productivity", label: "Productivity", Icon: FaTasks },
-  { key: "emotional", label: "Emotional (Mind)", Icon: FaBrain },
-  { key: "ai", label: "AI Counsellor", Icon: FaRobot },
-  { key: "profile", label: "Profile", Icon: FaUser },
+  { key: "dashboard", label: "Dashboard", Icon: FaTachometerAlt, path: "/home" },
+  { key: "health", label: "Health", Icon: FaHeartbeat, path: "/health" },
+  { key: "finance", label: "Finance", Icon: FaWallet, path: "/finance" },
+  { key: "productivity", label: "Productivity", Icon: FaTasks, path: "/productivity" },
+  { key: "mind", label: "Emotional (Mind)", Icon: FaBrain, path: "/mind" },
+  { key: "ai", label: "AI Counsellor", Icon: FaRobot, path: "/ai" },
+  { key: "profile", label: "Profile", Icon: FaUser, path: "/profile" },
 ];
 
-export default function Navbar({ active = "dashboard", setActive = () => {} }) {
+export default function Navbar({ active = "dashboard" }) {
+  const navigate = useNavigate();
+
   return (
     <aside className="sidebar">
       <div className="profile-section">
@@ -31,14 +33,14 @@ export default function Navbar({ active = "dashboard", setActive = () => {} }) {
       </div>
 
       <ul className="nav-links" role="menu">
-        {navItems.map(({ key, label, Icon }) => (
+        {navItems.map(({ key, label, Icon, path }) => (
           <li
             key={key}
             role="menuitem"
             tabIndex={0}
             className={`nav-item ${active === key ? "active" : ""}`}
-            onClick={() => setActive(key)}
-            onKeyDown={(e) => { if (e.key === "Enter") setActive(key); }}
+            onClick={() => navigate(path)}
+            onKeyDown={(e) => { if (e.key === "Enter") navigate(path); }}
           >
             <Icon className="icon" />
             <span className="label">{label}</span>
@@ -48,3 +50,5 @@ export default function Navbar({ active = "dashboard", setActive = () => {} }) {
     </aside>
   );
 }
+
+

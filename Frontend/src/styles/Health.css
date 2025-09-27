@@ -1,0 +1,150 @@
+/* --- Global & Layout --- */
+.health-content-container {
+  position: relative;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.25rem 2.5rem;
+  max-width: 95% !important; 
+}
+
+section {
+  margin-bottom: 1.25rem;
+}
+
+.main-title {
+  color: #111418;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  color: #111418;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  padding: 1.25rem 0 0.75rem 0;
+}
+
+/* --- Stat Card --- */
+.stat-card-grid, .stat-card-grid-single {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.stat-card-grid-single {
+  max-width: 33%;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 158px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #dce0e5;
+}
+
+.stat-label {
+  color: #111418;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #111418;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* --- Progress Bar --- */
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+.progress-bar-header { display: flex; justify-content: space-between; }
+.progress-bar-label { color: #111418; font-size: 1rem; font-weight: 500; }
+.progress-bar-background { border-radius: 9999px; background-color: #dce0e5; }
+.progress-bar-foreground { height: 0.5rem; border-radius: 9999px; background-color: #111418; }
+.progress-bar-value { color: #637588; font-size: 0.875rem; }
+
+/* --- Info Card --- */
+.info-card {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0.75rem;
+  padding: 1rem 0;
+}
+
+.info-card-text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.info-card-title { font-size: 1rem; font-weight: 700; color: #111418; }
+.info-card-description { font-size: 0.875rem; color: #637588; }
+
+.info-card-image {
+  flex: 1;
+  border-radius: 0.75rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 16 / 9;
+}
+
+/* --- Trend Chart Card --- */
+.trend-chart-wrapper {
+  padding: 1rem 0;
+}
+.trend-chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #dce0e5;
+  padding: 1.5rem;
+}
+.trend-chart-title { font-size: 1rem; font-weight: 500; color: #111418; }
+.trend-chart-value { font-size: 32px; font-weight: 700; line-height: 1.25; color: #111418; }
+.trend-chart-period { display: flex; gap: 0.25rem; }
+.trend-chart-period p { font-size: 1rem; color: #637588; }
+.trend-chart-change.positive { color: #078838; font-weight: 500; }
+.chart-area { min-height: 180px; padding-top: 1rem; }
+.chart-labels { display: flex; justify-content: space-around; }
+.chart-labels p { color: #637588; font-size: 13px; font-weight: 700; }
+
+/* --- Floating Action Button (FAB) --- */
+.fab {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #4799eb;
+  color: #111418;
+  border: none;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+.fab:hover {
+  transform: scale(1.05);
+}
