@@ -1,0 +1,22 @@
+/* Layout wrapper */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Sidebar stays fixed */
+.sidebar {
+  flex-shrink: 0;
+}
+
+/* Main content should respect sidebar width */
+.dashboard-main-content {
+  flex-grow: 1;
+  margin-left: 220px; /* same width as .sidebar */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  min-height: 100vh;
+}

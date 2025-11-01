@@ -1,0 +1,115 @@
+/* Sidebar Container */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  font-family: "Inter", sans-serif;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20; /* ensure sidebar sits above main content */
+}
+
+/* Profile Section */
+.profile-section {
+  text-align: center;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+}
+
+.profile-icon {
+  font-size: 40px;
+  color: #3b82f6; /* blue accent */
+}
+
+.profile-name {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  color: #374151;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
+  outline: none;
+}
+
+.nav-item:focus {
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+
+/* Hover for non-active items */
+.nav-item:hover {
+  background: #f3f4f6;
+  color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+/* Active item styling */
+.nav-item.active {
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(37,99,235,0.18);
+}
+
+/* Keep icon sizing consistent */
+.icon {
+  font-size: 18px;
+  min-width: 18px;
+}
+
+/* Label spacing */
+.label {
+  display: inline-block;
+}
+
+/* Mobile behavior: collapse margin with home content */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+}

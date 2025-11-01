@@ -1,0 +1,164 @@
+.content-area {
+  flex-grow: 1;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f2f4;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-bar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111418;
+}
+
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #f0f2f4;
+  color: #111418;
+  border: none;
+  border-radius: 9999px; /* Circular button */
+}
+
+.profile-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 9999px;
+}
+
+/* --- Main Content & Widgets --- */
+.main-content {
+  padding: 2.5rem;
+}
+
+.content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111418;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #111418;
+}
+
+.score-progress-wrapper, .key-area-card, .projection-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.score-progress-labels {
+  display: flex;
+  justify-content: space-between;
+}
+.score-progress-labels p:first-child { font-weight: 500; }
+.score-status { color: #637588; font-size: 0.875rem; }
+
+.progress-bar-background {
+  border-radius: 9999px;
+  background-color: #e9ecef;
+  margin: 0.75rem 0;
+}
+.progress-bar-foreground {
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #111418;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 cards per row */
+  gap: 1.5rem;
+}
+
+.key-area-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card-content { display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; }
+.card-text { flex-grow: 1; }
+.card-title { font-size: 1rem; font-weight: 700; }
+.card-description { color: #637588; font-size: 0.875rem; margin-top: 0.25rem; }
+
+.btn {
+  cursor: pointer;
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: #f0f2f4;
+  color: #111418;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+
+/* Projection Card */
+.projection-card { display: flex; flex-direction: column; gap: 0.5rem; }
+.projection-label { font-weight: 500; }
+.projection-value { font-size: 32px; font-weight: 700; }
+.projection-timeline { display: flex; gap: 0.25rem; color: #637588; }
+.projection-change { color: #078838; font-weight: 500; }
+.chart-container { display: flex; flex-direction: column; gap: 1rem; padding-top: 1rem; }
+.chart-labels { display: flex; justify-content: space-around; font-size: 13px; font-weight: 700; color: #637588; }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .card-list {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+  .main-content {
+    padding: 1.5rem;
+  }
+  .top-bar {
+    padding: 1rem 1.5rem;
+  }
+}

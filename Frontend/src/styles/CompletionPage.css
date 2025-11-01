@@ -1,0 +1,44 @@
+.completion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+  font-family: "Inter", sans-serif;
+}
+
+.completion-card {
+  background: #fff;
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  max-width: 500px;
+}
+
+.completion-card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff4081;
+}
+
+.completion-card p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.completion-card button {
+  background: #ff4081;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.completion-card button:hover {
+  background: #e73370;
+}

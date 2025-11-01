@@ -1,0 +1,50 @@
+worker_input = {
+    "user_query": "How can I reduce stress this week?",  # The actual question or request from user
+    "context": "User has been feeling anxious about work deadlines.",  # Optional conversation history or context
+    "user_profile": {
+        "age": 25,                  # Integer
+        "gender": "male",           # String: 'male', 'female', 'other'
+        "location": "India",        # String
+        "occupation": "software engineer",  # Optional
+        "preferences": {            # Optional generic user preferences
+            "communication_style": "concise"  # e.g., 'detailed', 'concise', 'step-by-step'
+        }
+    },
+    "worker_specific_data": {
+        "mind": {
+            "mood": "anxious",      # String: e.g., 'anxious', 'happy', 'stressed'
+            "stress_level": 7,       # Integer (1-10)
+            "goal": "meditation"     # String: e.g., 'relaxation', 'focus', 'mindfulness'
+        },
+        "health": {
+            "symptoms": ["headache"],  # List of strings
+            "diet_preferences": "vegan",  # String
+            "sleep_hours": 5,            # Integer (average sleep per night)
+            "goal": "improve wellness"   # String
+        },
+        "finance": {
+            "income": 50000,              # Monthly income
+            "expenses": 30000,            # Monthly expenses
+            "savings_goal": 10000,        # Monthly or targeted savings
+            "investment_preference": "low-risk"  # String: 'low-risk', 'medium-risk', 'high-risk'
+        },
+        "productivity": {
+            "tasks": ["project report", "prepare presentation"],  # List of pending tasks
+            "time_available_hours": 4,   # Number of hours user can devote
+            "goal": "better focus"       # String
+        },
+        "fitness": {
+            "current_fitness_level": "beginner",  # String: 'beginner', 'intermediate', 'advanced'
+            "exercise_preferences": ["yoga", "walking"],  # List of strings
+            "goal": "weight loss",                  # String
+            "time_available_minutes": 60            # Daily workout duration in minutes
+        },
+        "studies": {
+            "subject": "AI & ML",       # Subject/topic user is studying
+            "level": "college",         # String: 'school', 'college', 'professional'
+            "deadline": "2025-10-20",  # Date string for exam/assignment
+            "learning_style": "visual"  # String: 'visual', 'reading', 'interactive', etc.
+        }
+    },
+    "timestamp": "2025-10-16T17:00:00"  # Optional, ISO 8601 format
+}
