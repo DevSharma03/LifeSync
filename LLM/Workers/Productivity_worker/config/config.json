@@ -1,6 +1,6 @@
 {
     "gemini": {
-        "api_keys": ["AIzaSyAIDUL08PVMFVQ-SfwHJq98R1RpSgCZ2W8", "AIzaSyCr_4XofntZfhGIf4uNdMrDPvQWVq8yRrU"],
+        "api_keys": [API Key here],
         "model": "gemini-2.5-flash"
     }
 }
