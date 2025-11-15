@@ -1,6 +1,6 @@
 {
     "gemini": {
-        "api_keys": [Paste your API Key here],
+        "api_keys": [Enter your API Key here],
         "model": "gemini-2.5-flash"
     }
 }
