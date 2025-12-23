@@ -1,0 +1,220 @@
+/* OVERLAY */
+.fitness_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 20, 24, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* MODAL */
+.fitness_modal {
+  width: 580px;
+  max-width: 95%;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 1.9rem;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.25);
+}
+
+.fitness_modal h3 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+/* QUESTIONS */
+.fitness_question_box h2 {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.fitness_options {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.fitness_option {
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.fitness_option:hover {
+  background: #f1f7ff;
+  border-color: #4b9cff;
+}
+
+.fitness_option.active {
+  background: #111418;
+  color: #fff;
+}
+
+/* DASHBOARD */
+.fitness_dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* ================= METRIC CARDS ================= */
+
+.fitness_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+.fitness_card {
+  background: #f9fafb;
+  border-radius: 1.1rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fitness_card.highlight {
+  background: linear-gradient(135deg, #eef5ff, #f8fbff);
+}
+
+/* TOP HEADING */
+.card_heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111418;
+  margin-bottom: 0.15rem;
+}
+
+/* ICON */
+.card_icon {
+  font-size: 1.4rem;
+}
+
+/* VALUE */
+.card_value {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #111418;
+  line-height: 1.1;
+}
+
+/* UNIT */
+.card_unit {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+/* ================= GOALS ================= */
+
+.fitness_goal_card {
+  background: #fff;
+  border-radius: 1.1rem;
+  padding: 1.1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.goal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.goal_percent {
+  color: #4b9cff;
+}
+
+/* PROGRESS BAR */
+.fitness_progress {
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.6rem 0 0.8rem;
+}
+
+.fitness_progress div {
+  height: 100%;
+  background: linear-gradient(90deg, #4b9cff, #8fd3ff);
+}
+
+/* GOAL EDIT */
+.fitness_goal_edit {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.fitness_goal_edit button {
+  background: #111418;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.75rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+}
+
+.fitness_goal_edit input {
+  width: 100px;
+  padding: 0.35rem;
+  border-radius: 0.45rem;
+  border: 1px solid #d1d5db;
+}
+
+/* ================= STATUS ================= */
+
+.fitness_status {
+  display: flex;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, #eef5ff, #f8fbff);
+  border: 1px solid #e0ecff;
+  align-items: center;
+}
+
+.status_icon {
+  font-size: 1.4rem;
+}
+
+.fitness_status strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.fitness_status p {
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+  color: #374151;
+}
+
+/* ================= BUTTONS ================= */
+
+.fitness_next {
+  margin-top: 1.2rem;
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 0.85rem;
+  background: linear-gradient(90deg, #111418, #2a2f36);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+
+.fitness_close {
+  margin-top: 1.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 0.65rem;
+  border: 1px solid #d1d5db;
+  background: transparent;
+}

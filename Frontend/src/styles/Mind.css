@@ -1,228 +1,845 @@
-/* =================================== */
-/* :ROOT VARIABLES            */
-/* =================================== */
-/* Centralized theme properties for easy customization */
+/* ================= ROOT ================= */
 
 :root {
-  /* Colors */
-  --color-text-primary: #111418;
-  --color-text-secondary: #637588;
-  --color-background: #ffffff;
-  --color-surface: #ffffff; /* For cards and distinct sections */
-  --color-interface: #f0f2f4; /* For buttons, progress bars */
-  --color-border: #dce0e5;
-  --color-primary: #4799eb;
-  --color-primary-hover: #3b82f6;
+  --mind-bg: #fafafa;
+  --mind-card-bg: #ffffff;
+  --mind-text-primary: #1f2933;
+  --mind-text-secondary: #6b7280;
 
-  /* Typography */
-  --font-primary: "Lexend", "Noto Sans", sans-serif;
+  --mind-accent: #8b5cf6; /* soft violet */
+  --mind-accent-soft: #ede9fe; /* very light violet */
+  --mind-border-radius-lg: 24px;
+  --mind-border-radius-md: 16px;
 
-  /* Sizing & Spacing */
-  --spacing-xs: 0.25rem; /* 4px */
-  --spacing-sm: 0.5rem; /* 8px */
-  --spacing-md: 1rem; /* 16px */
-  --spacing-lg: 1.5rem; /* 24px */
-  --spacing-xl: 2.5rem; /* 40px */
-
-  /* Borders */
-  --border-radius-md: 0.75rem; /* 12px */
-  --border-radius-lg: 1rem; /* 16px */
-
-  /* Effects */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --transition-fast: 200ms ease-in-out;
+  --mind-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  --mind-transition: 0.25s ease;
 }
 
-/* =================================== */
-/* GENERAL LAYOUT            */
-/* =================================== */
+/* ================= PAGE ================= */
 
-.mood-content-container {
-  position: relative;
+.mind_container {
   width: 100%;
-  font-family: var(--font-primary);
+  background: var(--mind-bg);
+  font-family: "Lexend", "Noto Sans", sans-serif;
 }
 
-.main-content {
-  padding: var(--spacing-xl);
+.mind_main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
 }
 
-section {
-  margin-bottom: var(--spacing-xl);
-}
-
-.main-title {
-  color: var(--color-text-primary);
-  font-size: 2rem; /* 32px */
+.mind_main_title {
+  font-size: 2.2rem;
   font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 32px;
+  color: var(--mind-text-primary);
 }
 
-.section-title {
-  color: var(--color-text-primary);
-  font-size: 1.375rem; /* 22px */
+.mind_section_title {
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: -0.015em;
-  padding-bottom: var(--spacing-md);
-  border-bottom: 1px solid var(--color-interface);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 24px;
+  color: #111827;
+  border-bottom: 1px solid #f0f2f4;
+  padding-bottom: 5px;
 }
 
-/* =================================== */
-/* INFO SECTION              */
-/* =================================== */
+/* ================= INFO (SENTIMENT) ================= */
 
-.info-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-md) 0;
-}
-
-.info-section-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.info-section-text {
-  width: 100%;
-  min-width: 18rem;
-}
-
-.info-section-title {
-  color: var(--color-text-primary);
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  margin-bottom: var(--spacing-sm);
-}
-
-.info-section-description {
-  color: var(--color-text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-@media (min-width: 768px) {
-  .info-section {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-/* =================================== */
-/* FEATURE CARD              */
-/* =================================== */
-
-.feature-card-list {
+.mind_info {
+  background: var(--mind-card-bg);
+  border-radius: var(--mind-border-radius-lg);
+  box-shadow: var(--mind-shadow);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: 1.6fr 1fr;
+  overflow: hidden;
+  margin-bottom: 35px;
 }
 
-.feature-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-interface);
+.mind_info_text {
+  padding: 48px;
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
   flex-direction: column;
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-md);
-  transition: box-shadow var(--transition-fast),
-    transform var(--transition-fast);
-}
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
 }
 
-.feature-card-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.feature-card-text {
-  flex-grow: 1;
-}
-
-.feature-card-title {
-  color: var(--color-text-primary);
-  font-size: 1rem;
+.mind_info_title {
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: 12px;
+  color: var(--mind-text-primary);
 }
 
-.feature-card-description {
-  color: var(--color-text-secondary);
-  font-size: 0.875rem;
-  line-height: 1.5;
+.mind_info_description {
+  font-size: 1rem;
+  color: var(--mind-text-secondary);
+  line-height: 1.7;
+  max-width: 480px;
 }
 
-.feature-card-image {
-  border-radius: var(--border-radius-md);
-  background-size: cover;
+.mind_info_image {
+  background-size: contain; /* 🔥 IMPORTANT FIX */
   background-position: center;
-  aspect-ratio: 16 / 9;
-  margin-top: var(--spacing-md);
-  order: -1; /* Move image to top */
+  background-repeat: no-repeat;
+  min-height: 320px;
 }
 
-.btn {
+.Mind_Personalized_Emotional_Plans {
+  margin-bottom: 35px;
+}
+
+/* ================= CARD LIST ================= */
+
+.mind_card_list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.mind_card {
+  background: var(--mind-card-bg);
+  border-radius: var(--mind-border-radius-lg);
+  box-shadow: var(--mind-shadow);
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  overflow: hidden;
+  height: 300px;
+}
+
+.mind_card_content {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mind_card_title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--mind-text-primary);
+}
+
+.mind_card_description {
+  font-size: 1rem;
+  color: var(--mind-text-secondary);
+  line-height: 1.6;
+  max-width: 460px;
+}
+
+.mind_card_image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ================= BUTTON (EMOTIONAL STYLE) ================= */
+
+.mind_btn {
+  margin-top: 16px;
+  width: 150px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--mind-accent-soft);
+  color: var(--mind-accent);
+  border: 2px solid #8b5cf6;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  height: 2.25rem;
-  padding: 0 var(--spacing-md);
-  background-color: var(--color-interface);
-  color: var(--color-text-primary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: none;
-  border-radius: var(--border-radius-md);
-  width: fit-content;
-  transition: background-color var(--transition-fast);
-  outline: none;
-}
-.btn:hover {
-  background-color: #e5e7eb;
-}
-.btn:focus-visible {
-  box-shadow: 0 0 0 3px var(--color-primary-hover);
+  transition: var(--mind-transition);
 }
 
-/* =================================== */
-/* FLOATING ACTION BUTTON (FAB)     */
-/* =================================== */
+.mind_btn:hover {
+  background: var(--mind-accent);
+  color: #ffffff;
+}
 
-.fab {
+/* ================= MODAL ================= */
+
+.mind_overlay {
   position: fixed;
-  bottom: var(--spacing-lg);
-  right: var(--spacing-lg);
-  width: 3.5rem;
-  height: 3.5rem;
-  background-color: var(--color-primary);
-  color: var(--color-background);
-  border: none;
-  border-radius: var(--border-radius-lg);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
+}
+
+.mind_modal {
+  background: #ffffff;
+  width: 480px;
+  padding: 32px;
+  border-radius: var(--mind-border-radius-lg);
+}
+
+.mind_question_text {
+  font-size: 1.1rem;
+  margin: 16px 0;
+  color: var(--mind-text-primary);
+}
+
+.mind_options {
+  display: grid;
+  gap: 12px;
+}
+
+.mind_options button {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
   cursor: pointer;
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition-fast),
-    background-color var(--transition-fast);
+  font-weight: 500;
+}
+
+.mind_options button:hover {
+  background: var(--mind-accent-soft);
+}
+
+/* ================= FAB ================= */
+
+.mind_fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: var(--mind-accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--mind-shadow);
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .mind_info,
+  .mind_card {
+    grid-template-columns: 1fr;
+  }
+
+  .mind_info_text,
+  .mind_card_content {
+    padding: 28px;
+  }
+
+  .mind_info_image,
+  .mind_card_image {
+    min-height: 220px;
+  }
+}
+
+/* ===================================== */
+/* QUIZ MODAL OVERLAY                   */
+/* ===================================== */
+
+.mind_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+/* ===================================== */
+/* QUIZ MODAL CONTAINER                 */
+/* ===================================== */
+
+.mind_modal_container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  animation: mindModalFade 0.3s ease;
+}
+
+@keyframes mindModalFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===================================== */
+/* QUESTION TEXT                        */
+/* ===================================== */
+
+.mind_modal_question {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 18px 0 24px;
+  color: #1f2933;
+}
+
+/* ===================================== */
+/* OPTIONS                              */
+/* ===================================== */
+
+.mind_modal_options {
+  display: grid;
+  gap: 14px;
+}
+
+.mind_modal_options button {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mind_modal_options button:hover {
+  background: #ede9fe;
+  border-color: #c4b5fd;
+}
+
+/* ===================================== */
+/* SCORE                                */
+/* ===================================== */
+
+.mind_modal_score {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #7c3aed;
+  margin: 16px 0;
+  text-align: center;
+}
+
+/* ===================================== */
+/* MOBILE                               */
+/* ===================================== */
+
+@media (max-width: 600px) {
+  .mind_modal_container {
+    padding: 24px;
+    border-radius: 22px;
+  }
+}
+
+/* ================= CHAT ================= */
+
+.mind_chat_panel {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 340px;
+  height: 420px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.mind_chat_header {
+  padding: 14px 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mind_chat_header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mind_chat_body {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mind_chat_msg {
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  max-width: 80%;
+}
+
+.mind_chat_msg.user {
+  background: #ede9fe;
+  color: #6d28d9;
+  align-self: flex-end;
+}
+
+.mind_chat_msg.bot {
+  background: #f3f4f6;
+  color: #1f2933;
+  align-self: flex-start;
+}
+
+.mind_chat_input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mind_chat_input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.mind_chat_input button {
+  background: #7c3aed;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* ================= MODAL PROGRESS ================= */
+
+.mind_modal_progress {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.mind_modal_progress p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.mind_modal_dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mind_dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.mind_dot.active {
+  background: #7c3aed;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.6);
+  transform: scale(1.15);
+}
+
+/* ================= TIMER ================= */
+
+.mind_timer {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 24px auto;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mind_timer svg {
+  transform: rotate(-90deg);
+}
+
+.mind_timer circle {
+  fill: none;
+  stroke-width: 8;
+}
+
+.mind_timer .bg {
+  stroke: #e5e7eb;
+}
+
+.mind_timer .progress {
+  stroke: #a78bfa;
+  stroke-dasharray: 283;
+  transition: stroke-dashoffset 1s linear;
+  filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.45));
+}
+
+.mind_timer span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #4c1d95;
+}
+
+/* ================= BREATHING MODE ================= */
+
+.mind_timer.breathing {
+  animation: breathingPulse 6s ease-in-out infinite;
+}
+
+@keyframes breathingPulse {
+  0% {
+    transform: scale(0.94);
+  }
+  25% {
+    transform: scale(1.05); /* inhale */
+  }
+  50% {
+    transform: scale(1.08); /* hold */
+  }
+  75% {
+    transform: scale(1.02); /* exhale */
+  }
+  100% {
+    transform: scale(0.94);
+  }
+}
+
+.mind_breathing_box {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 18px 0;
+  color: #7c3aed;
+  letter-spacing: 0.6px;
+}
+
+/* ================= MEDITATION MODAL ================= */
+
+.mind_modal_container.calm {
+  text-align: center;
+  padding: 42px;
+}
+
+/* Floating quotes */
+.mind_quote {
+  margin-top: 18px;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #4b5563;
+  opacity: 0.85;
+  animation: fadeFloat 6s ease-in-out infinite;
+}
+
+@keyframes fadeFloat {
+  0% {
+    opacity: 0.4;
+    transform: translateY(6px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateY(6px);
+  }
+}
+
+/* ================= 7 DAY STREAK ================= */
+
+.mind_streak {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 26px 0;
+}
+
+.mind_streak span {
+  width: 10px;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.mind_streak span.active {
+  background: #a78bfa;
+  transform: scale(1.25);
+  box-shadow: 0 0 8px rgba(167, 139, 250, 0.6);
+}
+
+/* ================= BUTTON VARIANTS ================= */
+
+.mind_btn.soft {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.mind_btn.soft:hover {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+.mind_btn.ghost {
+  background: transparent;
+  opacity: 0.65;
+  border: none;
+}
+
+.mind_btn.ghost:hover {
+  opacity: 1;
+  color: rgb(255, 29, 48);
+}
+
+/* ================= SLEEP MODE ================= */
+
+.mind_modal_container.sleep {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+  text-align: center;
+  padding: 48px;
+}
+
+/* Hide timer in sleep mode */
+.mind_modal_container.sleep .mind_timer {
+  display: none;
+}
+
+/* Breathing orb */
+.sleep_orb {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 42px auto;
+  background: radial-gradient(
+    circle,
+    rgba(167, 139, 250, 0.35),
+    rgba(30, 27, 75, 0.15)
+  );
+  animation: sleepPulse 8s ease-in-out infinite;
+}
+
+@keyframes sleepPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.55;
+  }
+}
+
+/* ===================================== */
+/* GRATITUDE JOURNAL (FIXED + STABLE UI) */
+/* ===================================== */
+
+/* ---------- Tabs (New Entry / History) ---------- */
+
+.journal_tabs {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 18px 0 28px;
+  border-bottom: 1px solid #eceef2;
+}
+
+.journal_tabs button {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #9ca3af;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.journal_tabs button.active {
+  color: #7c3aed;
+}
+
+.journal_tabs button.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: #7c3aed;
+  border-radius: 2px;
+}
+
+/* ---------- Saved Feedback ---------- */
+
+.journal_saved {
+  background: #ecfdf5;
+  color: #047857;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+  animation: fadeInScale 0.4s ease;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---------- Mood Selector ---------- */
+
+.journal_moods {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.journal_moods button {
+  flex: 1;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.journal_moods button:hover {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.journal_moods button.active {
+  background: #7c3aed;
+  color: #ffffff;
+  border-color: #7c3aed;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+}
+
+/* ---------- Journal Input Fields ---------- */
+
+.mind_modal_container .mind_journal_input {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  padding: 16px 18px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background: #fafafa;
+}
+
+.mind_modal_container input.mind_journal_input {
+  height: 52px;
+  margin-bottom: 14px;
+}
+
+.mind_modal_container textarea.mind_journal_input {
+  min-height: 150px;
+  resize: none;
+}
+
+.mind_modal_container .mind_journal_input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
   outline: none;
 }
-.fab:hover {
-  transform: scale(1.1);
-  background-color: var(--color-primary-hover);
+
+/* ---------- Journal List ---------- */
+
+.mind_journal_list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
 }
-.fab:focus-visible {
-  box-shadow: 0 0 0 4px var(--color-primary);
+
+.mind_journal_item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 18px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.mind_journal_item:hover {
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.mind_journal_item strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1f2933;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.mind_journal_item span {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.mind_journal_item p {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.55;
+}
+
+/* ---------- Delete Button ---------- */
+
+.mind_journal_item button {
+  background: none;
+  border: none;
+  color: #c7c9d1;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.mind_journal_item button:hover {
+  color: #ef4444;
+  transform: scale(1.1);
 }

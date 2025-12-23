@@ -1,0 +1,222 @@
+/* =========================================================
+   Overlay
+========================================================= */
+.sd-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 20, 24, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* =========================================================
+   Modal Container
+========================================================= */
+.sd-modal {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  animation: sdFade 0.3s ease;
+}
+
+/* =========================================================
+   Close Button
+========================================================= */
+.sd-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f2f4;
+  color: #111418;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sd-close:hover {
+  background: #e1e5ea;
+}
+
+/* =========================================================
+   Header
+========================================================= */
+.sd-modal h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #111418;
+  margin-bottom: 0.75rem;
+}
+
+.sd-score-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.sd-score {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #2f855a;
+}
+
+.sd-badge {
+  background: #e6f4ea;
+  color: #2f855a;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   Description
+========================================================= */
+.sd-description {
+  font-size: 1rem;
+  color: #637588;
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+}
+
+/* =========================================================
+   Accordion
+========================================================= */
+.sd-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sd-accordion button {
+  width: 100%;
+  text-align: left;
+  background: #f0f2f4;
+  border: none;
+  padding: 0.9rem 1.25rem;
+  border-radius: 1rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #111418;
+  transition: background 0.2s ease;
+}
+
+.sd-accordion button:hover {
+  background: #e1e5ea;
+}
+
+.sd-accordion p,
+.sd-accordion ul {
+  background: #fafbfc;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  color: #637588;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   Metric Grid
+========================================================= */
+.sd-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.sd-metric-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Impact Colors */
+.impact-high {
+  color: #2f855a;
+}
+
+.impact-medium {
+  color: #3182ce;
+}
+
+.impact-low {
+  color: #c53030;
+}
+
+/* =========================================================
+   Lists
+========================================================= */
+.sd-accordion ul {
+  list-style: disc;
+  padding-left: 2rem;
+}
+
+.sd-accordion li {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   Animations
+========================================================= */
+@keyframes sdFade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+@media (max-width: 768px) {
+  .sd-modal {
+    padding: 2rem 1.75rem;
+  }
+
+  .sd-score {
+    font-size: 2.5rem;
+  }
+
+  .sd-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sd-modal {
+    padding: 1.75rem 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .sd-modal h2 {
+    font-size: 1.6rem;
+  }
+
+  .sd-score-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sd-score {
+    font-size: 2.2rem;
+  }
+}

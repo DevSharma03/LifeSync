@@ -1,4 +1,38 @@
-/* Sidebar Container */
+/* =========================================================
+   Hamburger Button
+========================================================= */
+.hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 60;
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.hamburger-btn svg {
+  font-size: 20px;
+  color: #111418;
+}
+
+/* =========================================================
+   Sidebar Overlay
+========================================================= */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 40;
+}
+
+/* =========================================================
+   Sidebar (Desktop)
+========================================================= */
 .sidebar {
   width: 220px;
   height: 100vh;
@@ -11,19 +45,21 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 20; /* ensure sidebar sits above main content */
+  z-index: 50;
+  transition: transform 0.3s ease;
 }
 
-/* Profile Section */
+/* =========================================================
+   Profile Section
+========================================================= */
 .profile-section {
   text-align: center;
   margin-bottom: 18px;
-  padding: 8px 12px;
 }
 
 .profile-icon {
   font-size: 40px;
-  color: #3b82f6; /* blue accent */
+  color: #3b82f6;
 }
 
 .profile-name {
@@ -33,7 +69,9 @@
   color: #374151;
 }
 
-/* Navigation Links */
+/* =========================================================
+   Navigation
+========================================================= */
 .nav-links {
   list-style: none;
   padding: 8px;
@@ -54,62 +92,54 @@
   font-weight: 500;
   cursor: pointer;
   border-radius: 8px;
-  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
-  outline: none;
+  transition: background 0.2s ease;
 }
 
-.nav-item:focus {
-  box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
-}
-
-/* Hover for non-active items */
 .nav-item:hover {
   background: #f3f4f6;
   color: #3b82f6;
-  transform: translateY(-1px);
 }
 
-/* Active item styling */
 .nav-item.active {
   background: linear-gradient(180deg, #3b82f6, #2563eb);
   color: #ffffff;
-  box-shadow: 0 6px 14px rgba(37,99,235,0.18);
 }
 
-/* Keep icon sizing consistent */
 .icon {
   font-size: 18px;
-  min-width: 18px;
 }
 
-/* Label spacing */
-.label {
-  display: inline-block;
+/* =========================================================
+   Close Button (Mobile)
+========================================================= */
+.close-btn {
+  display: none;
+  align-self: flex-end;
+  margin: 0 12px 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-/* Mobile behavior: collapse margin with home content */
+/* =========================================================
+   Mobile Styles
+========================================================= */
 @media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+
   .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-right: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
+    transform: translateX(-100%);
+    width: 240px;
   }
 
-  .nav-links {
-    flex-direction: row;
-    gap: 8px;
-    overflow-x: auto;
+  .sidebar.open {
+    transform: translateX(0);
   }
 
-  .nav-item {
-    padding: 8px 12px;
-    border-radius: 10px;
-    font-size: 14px;
+  .close-btn {
+    display: block;
   }
 }

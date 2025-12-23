@@ -1,0 +1,567 @@
+/* =================================================
+   FINANCE – CARD BASED UI (Health Style)
+   Scoped & Collision Free
+================================================= */
+
+.finance_container {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.finance_main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 32px 28px 60px;
+}
+
+/* ---------- TITLE ---------- */
+.finance_title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 36px;
+}
+
+/* ---------- SECTION ---------- */
+.finance_section_title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f0f2f4;
+}
+
+/* =================================================
+   INFO CARD (CANVAS)
+================================================= */
+
+.finance_info_card {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  height: 300px;
+  gap: 22px;
+  padding: 22px;
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border-radius: 22px;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  margin-bottom: 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.finance_info_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 52px rgba(15, 23, 42, 0.12);
+}
+
+.finance_info_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+}
+
+.finance_info_title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.finance_info_desc {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.finance_info_image {
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* =================================================
+   BUTTONS
+================================================= */
+
+.finance_btn_outline {
+  padding: 12px 20px;
+  width: 200px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid #4f6ef7;
+  color: #4f6ef7;
+  cursor: pointer;
+}
+
+.finance_btn_outline:hover {
+  background: #4f6ef7;
+  color: white;
+}
+
+/* =================================================
+   MODAL OVERLAY & CONTAINER
+================================================= */
+
+.modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+.modal_container {
+  background: #ffffff;
+  border-radius: 24px;
+  width: 720px;
+  max-width: 92vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- MODAL HEADER ---------- */
+.modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.modal_header h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.modal_close_btn {
+  border: none;
+  background: #f1f5f9;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal_close_btn:hover {
+  background: #e2e8f0;
+}
+
+/* ---------- MODAL BODY ---------- */
+.modal_body {
+  padding: 22px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ---------- MODAL FOOTER ---------- */
+.modal_footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 18px 22px;
+  border-top: 1px solid #eef2f7;
+}
+
+/* ---------- MODAL BUTTONS ---------- */
+.modal_btn_primary {
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #4f6ef7, #6f8bff);
+}
+
+.modal_btn_secondary {
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* =================================================
+   POPUP FINANCE CARD
+================================================= */
+
+.finance-card {
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border-radius: 22px;
+  padding: 26px;
+}
+
+.finance-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+/* ---------- FORM STRUCTURE ---------- */
+
+.finance-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.finance-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.finance-card input,
+.finance-card select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ---------- FORM GRID ---------- */
+.finance-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .finance-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- PRIMARY BUTTON ---------- */
+.finance-btn-primary {
+  height: 45px;
+  border-radius: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #4f6ef7, #6f8bff);
+}
+
+/* ---------- PROGRESS ---------- */
+.finance-progress {
+  height: 10px;
+  background: #edf0f7;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 14px 0;
+}
+
+.finance-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4f6ef7, #8ea2ff);
+}
+
+.finance-danger {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+/* ---------- TABLE ---------- */
+.finance-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.finance-table th {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.finance-table td {
+  background: #ffffff;
+  padding: 12px;
+}
+
+/* ---------- LOGS ---------- */
+.expense-log-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 18px 0 8px;
+}
+
+.expense-delete-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ---------- HELPERS ---------- */
+.finance-muted {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.finance-summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+/* =================================================
+   EXPENSE ANALYTICS
+================================================= */
+
+.expense-insights {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.expense-metric {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 13px;
+}
+
+.expense-metric span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.expense-metric b {
+  display: block;
+  margin-top: 4px;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+/* ---------- CIRCLE LOADER ---------- */
+.expense-circle svg {
+  width: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 3.8;
+}
+
+.circle-progress {
+  fill: none;
+  stroke: #22c55e;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+}
+
+.circle-text {
+  fill: #0f172a;
+  font-size: 6px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+/* ---------- CATEGORY BARS ---------- */
+.expense-bars {
+  margin-bottom: 22px;
+}
+
+.expense-bar-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.expense-bar {
+  height: 8px;
+  background: #edf0f7;
+  border-radius: 999px;
+}
+
+.expense-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 900px) {
+  .finance_info_card {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .modal_container {
+    width: 95vw;
+    max-height: 90vh;
+  }
+}
+
+@media (max-width: 700px) {
+  .expense-insights {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================================
+   FLOATING FINANCE CHATBOT (ADD-ON ONLY)
+   Scoped – No Collision
+================================================= */
+
+/* Floating Chat Button */
+.finance_chat_fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f6ef7, #6f8bff);
+  color: #ffffff;
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 18px 42px rgba(79, 110, 247, 0.45);
+  z-index: 1300;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.finance_chat_fab:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 24px 52px rgba(79, 110, 247, 0.6);
+}
+
+/* Chat Overlay */
+.finance_chat_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 1400;
+}
+
+/* Chat Panel */
+.finance_chat_panel {
+  position: absolute;
+  right: 28px;
+  bottom: 100px;
+  width: 380px;
+  height: 540px;
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.35);
+}
+
+/* Header */
+.finance_chat_panel header {
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.finance_chat_panel header h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.finance_chat_panel header button {
+  border: none;
+  background: #f1f5f9;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Messages */
+.finance_chat_messages {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* User Bubble */
+.chat_user {
+  align-self: flex-end;
+  max-width: 75%;
+  background: linear-gradient(135deg, #4f6ef7, #6f8bff);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 16px 16px 4px 16px;
+  font-size: 13.5px;
+  margin-bottom: 8px;
+}
+
+/* Bot Bubble */
+.chat_bot {
+  align-self: flex-start;
+  max-width: 75%;
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 10px 14px;
+  border-radius: 16px 16px 16px 4px;
+  font-size: 13.5px;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.finance_chat_panel footer {
+  padding: 12px;
+  border-top: 1px solid #eef2f7;
+  display: flex;
+  gap: 10px;
+}
+
+.finance_chat_panel textarea {
+  flex: 1;
+  resize: none;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 13px;
+  border: 1px solid #e5e7eb;
+}
+
+.finance_chat_panel footer button {
+  padding: 0 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #4f6ef7, #6f8bff);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .finance_chat_panel {
+    right: 12px;
+    width: 94vw;
+    height: 82vh;
+  }
+}

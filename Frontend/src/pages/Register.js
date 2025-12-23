@@ -26,8 +26,19 @@ export default function Register() {
         throw new Error(data.message || "Registration failed");
       }
 
-      alert("Registration successful! Please login.");
-      navigate("/login");
+      // ✅ AUTO-LOGIN AFTER REGISTER
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+      }
+
+      // (Optional but useful)
+      if (data.user) {
+        localStorage.setItem("user", JSON.stringify(data.user));
+      }
+
+      // ✅ REDIRECT TO QUESTIONS
+      navigate("/questions");
+
     } catch (err) {
       setError(err.message);
     }
@@ -49,6 +60,7 @@ export default function Register() {
             onChange={(e) => setName(e.target.value)}
             required
           />
+
           <input
             type="email"
             placeholder="Email"
@@ -56,6 +68,7 @@ export default function Register() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+
           <input
             type="password"
             placeholder="Password"
@@ -63,7 +76,9 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
           {error && <p className="error-text">{error}</p>}
+
           <button type="submit">Register</button>
         </form>
 

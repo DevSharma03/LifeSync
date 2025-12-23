@@ -1,27 +1,39 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../styles/CompletionPage.css";
+import { useNavigate } from "react-router-dom";
 
-export default function CompletionPage() {
+export default function CompletionPage({ answers }) {
   const navigate = useNavigate();
 
-  // Redirect automatically after 3 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate("/home");
-    }, 3000);
+  const submitProfile = async () => {
+    try {
+      const token = localStorage.getItem("token");
 
-    return () => clearTimeout(timer);
-  }, [navigate]);
+      await axios.post(
+        "http://localhost:5000/api/lifesync/infer-profile",
+        answers,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      alert("LifeSync profile generated successfully 🎉");
+      navigate("/home");
+    } catch (error) {
+      console.error(error);
+      alert("Profile generation failed");
+    }
+  };
 
   return (
     <div className="completion-container">
       <div className="completion-card">
-        <h1>🎉 Thank You!</h1>
-        <p>
-          You’ve completed the questionnaire. LifeSync is ready to help you maintain overall life balance!
-        </p>
-        <button onClick={() => navigate("/home")}>Let’s Begin 🚀</button>
+        <h1>🎯 Assessment Completed</h1>
+        <p>Your responses are being analyzed to build your LifeSync profile.</p>
+
+        <button onClick={submitProfile}>Generate My LifeSync Profile 🚀</button>
       </div>
     </div>
   );
