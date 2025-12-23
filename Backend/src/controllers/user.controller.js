@@ -4,3 +4,4 @@ export const getProfile = async (req, res) => {
     user: req.user
   });
 };
+

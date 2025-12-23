@@ -2,6 +2,7 @@
 import dotenv from "dotenv";
 import connectDB from "./config/db.js"; 
 import app from "./app.js"; // Import the app you configured with routes & middleware
+import "./jobs/score.job.js"; // 👈 add this
 
 dotenv.config();
 
