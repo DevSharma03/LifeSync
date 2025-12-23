@@ -1,12 +1,6 @@
 {
-  "gemini": {
-    "api_keys": [
-      Your API Key Here
-    ],
-    "model": "gemini-2.5-flash"
+  "groq": {
+    "api_key": Your API Key Here,
+    "model": "llama-3.3-70b-versatile"
   }
 }
-
-
-
-

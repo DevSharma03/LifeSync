@@ -1,27 +1,35 @@
 import json
-import random
-import google.generativeai as genai
+from groq import Groq
 
-class GeminiWrapper:
+
+class GroqWrapper:
     def __init__(self, config_path="Config/Config.json"):
         with open(config_path, "r") as f:
             self.config = json.load(f)
 
-        self.api_keys = self.config["gemini"]["api_keys"]
-        self.model_name = self.config["gemini"]["model"]
+        self.api_key = self.config["groq"]["api_key"]
+        self.model_name = self.config["groq"]["model"]
 
-    def _configure_random_key(self):
-        api_key = random.choice(self.api_keys)
-        genai.configure(api_key=api_key)
+        # Configure client ONCE
+        self.client = Groq(api_key=self.api_key)
 
     def call(self, prompt: str) -> str:
-        self._configure_random_key()
+        try:
+            completion = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7
+            )
 
-        model = genai.GenerativeModel(self.model_name)
-        response = model.generate_content(prompt)
+            if not completion or not completion.choices:
+                raise ValueError("No valid response from Groq model.")
 
-        if not response or not response.candidates:
-            raise ValueError("No valid response from Gemini model.")
+            return completion.choices[0].message.content
 
-        return response.text
+        except Exception as e:
+            print("[Groq ERROR]", str(e))
+            return None
+
 

@@ -1,4 +1,4 @@
-from wrapper import GeminiWrapper
+from .wrapper import GeminiWrapper
 from jinja2 import Template
 from datetime import datetime
 

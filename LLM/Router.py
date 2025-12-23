@@ -1,12 +1,12 @@
 import json
 import datetime
 from jinja2 import Template
-from wrapper import GeminiWrapper
+from wrapper import GroqWrapper
 
 class Router:
     def __init__(self, template_path="Config/Prompt_template/Router.j2", config_path="Config/Config.json"):
         self.template_path = template_path
-        self.llm = GeminiWrapper(config_path)
+        self.llm = GroqWrapper(config_path)
 
     def _format_messages(self, messages):
         formatted = ""
@@ -47,19 +47,3 @@ class Router:
             }
 
         return response_data
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
