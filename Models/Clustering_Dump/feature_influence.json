@@ -1,0 +1,16 @@
+{
+  "sleep_hours": {
+    "sleep_quality": 0.04,
+    "stress_level": -0.03
+  },
+  "steps_count": {
+    "physical_activity_consistency": 80,
+    "sedentary_level": -60
+  },
+  "distraction_ratio": {
+    "stress_level": 0.5
+  },
+  "savings_ratio": {
+    "financial_stress": -0.5
+  }
+}
