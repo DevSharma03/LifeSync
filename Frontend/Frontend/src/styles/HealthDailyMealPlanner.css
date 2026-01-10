@@ -1,0 +1,245 @@
+/* ==============================
+   OVERLAY & MODAL
+============================== */
+.health_daily_meal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 20, 24, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.health_daily_meal_modal {
+  width: 760px;
+  max-width: 95%;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  overflow-y: auto;
+}
+
+/* ==============================
+   HEADER
+============================== */
+.health_daily_meal_header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111418;
+}
+
+.health_daily_meal_header p {
+  font-size: 0.8rem;
+  color: #637588;
+}
+
+/* ==============================
+   FILTER
+============================== */
+.health_daily_meal_filter {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.health_daily_meal_filter button {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #dce0e5;
+  background: #fff;
+  cursor: pointer;
+}
+
+.health_daily_meal_filter button.active {
+  background: #111418;
+  color: #fff;
+  border-color: #111418;
+}
+
+/* ==============================
+   GRID
+============================== */
+.health_daily_meal_grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1rem;
+}
+
+/* ==============================
+   FOOD LIST
+============================== */
+.health_daily_meal_foods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.health_daily_meal_food_card {
+  border: 1px solid #dce0e5;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.health_daily_meal_food_card h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.health_daily_meal_food_card p {
+  font-size: 0.7rem;
+  color: #637588;
+}
+
+.health_daily_meal_food_card button {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.45rem;
+  border: none;
+  background: #111418;
+  color: #fff;
+  cursor: pointer;
+}
+
+.health_daily_meal_food_card button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ==============================
+   MY PLATE
+============================== */
+.health_daily_meal_plate {
+  border: 1px solid #dce0e5;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+}
+
+.health_daily_meal_plate h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.health_daily_meal_empty {
+  font-size: 0.75rem;
+  color: #637588;
+}
+
+/* ==============================
+   SELECTED ITEM
+============================== */
+.health_daily_meal_selected {
+  border-bottom: 1px dashed #e0e4e8;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.health_daily_meal_selected_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.health_daily_meal_selected_header span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.health_daily_meal_selected_header button {
+  background: transparent;
+  border: none;
+  color: #b00020;
+  cursor: pointer;
+}
+
+/* ==============================
+   PORTIONS
+============================== */
+.health_daily_meal_portions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.health_daily_meal_portions button {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #dce0e5;
+  background: transparent;
+  cursor: pointer;
+}
+
+.health_daily_meal_portions button.active {
+  background: #111418;
+  color: #fff;
+  border-color: #111418;
+}
+
+/* ==============================
+   SUMMARY
+============================== */
+.health_daily_meal_summary {
+  margin-top: 0.6rem;
+  background: #f0f2f4;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  font-size: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem;
+}
+
+/* ==============================
+   FEEDBACK
+============================== */
+.health_daily_meal_feedback .warn {
+  font-size: 0.75rem;
+  color: #b00020;
+  background: rgba(176, 0, 32, 0.08);
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.45rem;
+}
+
+.health_daily_meal_feedback .ai {
+  font-size: 0.78rem;
+  background: #f1f6fb;
+  color: #637588;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+}
+
+/* ==============================
+   ACTIONS
+============================== */
+.health_daily_meal_actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.health_daily_meal_actions .cancel {
+  background: transparent;
+  border: 1px solid #dce0e5;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.45rem;
+  font-size: 0.75rem;
+}
+
+.health_daily_meal_actions .save {
+  background: #111418;
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.45rem;
+  font-size: 0.75rem;
+}

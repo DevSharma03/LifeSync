@@ -1,0 +1,156 @@
+/* =================================================
+   EXPENSE TRACKER – PREMIUM FINTECH UI
+================================================= */
+
+.expense-shell {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+/* HERO */
+.expense-hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.expense-hero-left p {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.expense-hero-left h2 {
+  font-size: 36px;
+  margin: 6px 0;
+}
+
+.expense-hero-left span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* RING */
+.expense-hero-ring {
+  background: radial-gradient(circle at top, #ecfdf5, #ffffff);
+  border-radius: 22px;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.ring-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 3.8;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: #22c55e;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+}
+
+.ring-text {
+  fill: #0f172a;
+  font-size: 6px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+/* CATEGORY RANKING */
+.expense-ranking {
+  margin-bottom: 28px;
+}
+
+.expense-rank-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 70px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.expense-rank-bar {
+  height: 8px;
+  background: #edf0f7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.expense-rank-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+/* INPUT */
+.expense-input-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr auto;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.expense-input-row input,
+.expense-input-row select {
+  height: 46px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 0 14px;
+}
+
+.expense-input-row button {
+  height: 46px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4f6ef7, #6f8bff);
+  color: white;
+  font-weight: 700;
+  border: none;
+}
+
+/* ACTIVITY FEED */
+.expense-feed h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.expense-feed-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #f8fafc;
+  margin-bottom: 10px;
+}
+
+.expense-feed-item span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.expense-feed-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.expense-feed-right button {
+  border: none;
+  background: transparent;
+  color: #ef4444;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .expense-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-input-row {
+    grid-template-columns: 1fr;
+  }
+}

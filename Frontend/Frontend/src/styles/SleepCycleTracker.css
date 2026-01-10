@@ -1,0 +1,42 @@
+.sleep_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sleep_modal {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 420px;
+}
+
+.sleep_modal label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.sleep_modal input {
+  width: 100%;
+}
+
+.sleep_week {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.sleep_bar {
+  width: 14px;
+  background: #4b9cff;
+  border-radius: 0.25rem;
+  margin: 0.25rem auto;
+}
+
+.sleep_close {
+  margin-top: 1rem;
+}

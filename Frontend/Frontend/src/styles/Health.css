@@ -1,0 +1,212 @@
+/* ================= BASE ================= */
+.health_container {
+  width: 100%;
+}
+
+.health_main {
+  width: 100%;
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 1.5rem 2.5rem;
+}
+
+/* ================= HEADINGS ================= */
+.health_title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.health_section_title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f2f4;
+  padding-bottom: 10px;
+}
+
+/* ================= INFO CARD ================= */
+.health_info_card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.75rem;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.health_info_image {
+  height: 220px;
+  border-radius: 0.85rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.health_info_title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.health_info_desc {
+  font-size: 0.9rem;
+  color: #637588;
+}
+
+/* ================= BUTTON ================= */
+.health_btn_outline {
+  margin-top: 0.75rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid #111418;
+  background: #f0f2f4;
+  cursor: pointer;
+}
+
+/* ================= STAT ================= */
+.health_stat_card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  border-radius: 0.85rem;
+  width: fit-content;
+}
+
+/* ================= HYDRATION CARD ================= */
+.health_hydration_card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* LEFT */
+.health_hydration_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.health_hydration_left h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+/* GLASS GRID */
+.health_glass_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 46px);
+  gap: 0.6rem;
+  margin: 0.5rem 0;
+}
+
+.health_glass {
+  width: 46px;
+  height: 38px;
+  border-radius: 0.65rem;
+  background: #e7f1fb;
+  border: 1px solid #c7d8ea;
+  opacity: 0.35;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.health_glass.filled {
+  opacity: 1;
+  background: linear-gradient(180deg, #4b9cff, #6fb6ff);
+  border-color: #4b9cff;
+}
+
+.health_glass:hover {
+  transform: translateY(-1px);
+}
+
+/* TEXT */
+.health_hydration_count {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.health_hydration_tip {
+  font-size: 0.9rem;
+  color: #2f7a3d;
+  margin-top: 0.3rem;
+}
+
+/* RIGHT – WATER GLASS VISUAL */
+.health_hydration_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.health_water_glass {
+  width: 98px;
+  height: 140px;
+  border-radius: 0 0 14px 14px;
+  border: 2px solid #a9bfd6;
+  background: #f1f5f9;
+  position: relative;
+  overflow: hidden;
+}
+
+/* FILL */
+.health_water_fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, #4b9cff, #8fd3ff);
+  transition: height 0.35s ease;
+  border-radius: 0 0 12px 12px;
+}
+
+/* SUBTLE WATER SURFACE */
+.health_water_fill::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .health_hydration_card {
+    grid-template-columns: 1fr;
+  }
+
+  .health_hydration_right {
+    display: none; /* hide glass on small screens */
+  }
+}
+
+/* ================= FAB ================= */
+.health_fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 0.9rem;
+  border: none;
+  background: #4799eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .health_info_card {
+    grid-template-columns: 1fr;
+  }
+}

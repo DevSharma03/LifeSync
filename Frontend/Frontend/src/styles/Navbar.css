@@ -1,0 +1,145 @@
+/* =========================================================
+   Hamburger Button
+========================================================= */
+.hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 60;
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.hamburger-btn svg {
+  font-size: 20px;
+  color: #111418;
+}
+
+/* =========================================================
+   Sidebar Overlay
+========================================================= */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 40;
+}
+
+/* =========================================================
+   Sidebar (Desktop)
+========================================================= */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  font-family: "Inter", sans-serif;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+/* =========================================================
+   Profile Section
+========================================================= */
+.profile-section {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.profile-icon {
+  font-size: 40px;
+  color: #3b82f6;
+}
+
+.profile-name {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* =========================================================
+   Navigation
+========================================================= */
+.nav-links {
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  color: #374151;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #f3f4f6;
+  color: #3b82f6;
+}
+
+.nav-item.active {
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+  color: #ffffff;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+/* =========================================================
+   Close Button (Mobile)
+========================================================= */
+.close-btn {
+  display: none;
+  align-self: flex-end;
+  margin: 0 12px 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   Mobile Styles
+========================================================= */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 240px;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .close-btn {
+    display: block;
+  }
+}
