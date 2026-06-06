@@ -1,71 +1,212 @@
-# 🚀 LifeSync – Intelligent Personal Assistant Platform
+# 🚀 LifeSync – Intelligent Personal Assistant & Life-Management Platform
 
 <div align="center">
 
-### Seamlessly Connect Your Life with AI-Powered Synchronization
+### Unified AI-Powered Life Management Across Health, Productivity, Finance & Mental Wellness
 
 [![GitHub Stars](https://img.shields.io/github/stars/DevSharma03/LifeSync?style=social)](https://github.com/DevSharma03/LifeSync)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Build Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)](https://github.com/DevSharma03/LifeSync)
+[![Status](https://img.shields.io/badge/Status-Active_Development-brightgreen.svg)](#)
+[![Topics](https://img.shields.io/badge/Topics-AI%20|%20ML%20|%20Full--Stack-purple)](#)
 
-**Full-Stack | Multi-System | AI-Integrated | Production-Ready** 🎯
+**[🌐 Visit Repository](#) • [📚 Documentation](#) • [🐛 Report Issues](#) • [💡 Suggest Features](#)**
 
 </div>
 
 ---
 
-## 📸 Project Screenshots & Visuals
+## 📸 Project Showcase
 
-> *Add your project images in this section*
+> *Add your project images and screenshots here*
 
-| Feature | Image |
-|---------|-------|
-| **Dashboard** | ![Coming Soon](https://via.placeholder.com/400x250/6C63FF/FFFFFF?text=Dashboard) |
-| **LLM Chat Interface** | ![Coming Soon](https://via.placeholder.com/400x250/6C63FF/FFFFFF?text=Chat+Interface) |
-| **Calendar & Reminders** | ![Coming Soon](https://via.placeholder.com/400x250/6C63FF/FFFFFF?text=Calendar) |
-| **Analytics** | ![Coming Soon](https://via.placeholder.com/400x250/6C63FF/FFFFFF?text=Analytics) |
+| Feature | Preview |
+|---------|---------|
+| **Dashboard & Analytics** | ![Dashboard](https://via.placeholder.com/400x250/6C63FF/FFFFFF?text=Dashboard+Analytics) |
+| **AI Chat Assistant** | ![Chat](https://via.placeholder.com/400x250/6C63FF/FFFFFF?text=AI+Chat+Interface) |
+| **Health Tracking** | ![Health](https://via.placeholder.com/400x250/6C63FF/FFFFFF?text=Health+Metrics) |
+| **Smart Predictions** | ![Predictions](https://via.placeholder.com/400x250/6C63FF/FFFFFF?text=ML+Predictions) |
 
 ---
 
-## ✨ About LifeSync
+## ✨ What is LifeSync?
+
+**LifeSync** is a production-grade, full-stack personal assistant platform that uses machine learning and AI to provide intelligent insights across four life dimensions:
+
+- **🏥 Health** – Sleep tracking, exercise monitoring, nutrition analysis
+- **🧠 Mental Wellness** – Stress management, mood tracking, mindfulness support
+- **⚡ Productivity** – Task optimization, focus improvement, time management
+- **💰 Financial Health** – Expense tracking, savings goals, financial wellness
 
 <div align="center">
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  LifeSync: Your Digital Life, Unified & Intelligent     │
-└─────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│   LifeSync: Harmonize Your Life with Intelligent AI      │
+│                                                           │
+│  Health  ❤️  →  Mind  🧠  →  Productivity  ⚡  →  Finance  💰
+│         ↓         ↓              ↓                    ↓
+│         └─────────────────────────────────────────────┘
+│              Unified Life Score 📊
+└──────────────────────────────────────────────────────────┘
 ```
 
 </div>
 
-**LifeSync** is a comprehensive personal assistant and life-management platform that unifies multiple systems into a seamless ecosystem. Whether you're a student managing assignments, a professional organizing workflows, or simply someone wanting better life organization – LifeSync adapts to your needs.
+---
 
-### 🎯 What Makes LifeSync Special?
+## 🎯 Core Features
 
-✅ **End-to-End Architecture** – From REST API to intuitive UI  
-✅ **AI-Powered Intelligence** – LLM integration for smart suggestions  
-✅ **Modular Design** – Deploy components independently or together  
-✅ **Developer Friendly** – Clear separation of concerns, easy to extend  
-✅ **Production Ready** – Built with scalability and reliability in mind  
+### 🤖 AI & Machine Learning
+- **Cold-Start Personalization** – Intelligent user profiling from minimal initial data
+- **Gaussian Mixture Models** – 12-cluster user segmentation for personalized recommendations
+- **LightGBM Cascade Prediction** – 5-tier predictive models (Health → Mind → Productivity → Finance → Life Score)
+- **Groq AI Integration** – Fast, low-latency LLM responses for conversational AI
+- **Feature Influence Mapping** – Explainable AI showing how features impact life scores
+
+### 💾 Data Architecture
+- **Multi-Dimensional Features** – 46+ tracked metrics across 4 life dimensions
+- **Semantic Constraints** – Intelligent validation firewall for data integrity
+- **Normalized Entropy Tracking** – Confidence scoring for predictions
+- **Production-Grade Models** – Trained on 20,000+ synthetic user profiles
+
+### 🛠️ Technical Stack
+- **Backend** – Node.js + Express REST API
+- **Frontend** – React with responsive UI
+- **AI/ML** – Python FastAPI microservice with scikit-learn, LightGBM
+- **Models** – Clustering, prediction, and profiling pipelines
+- **Deployment** – Docker-ready, containerized architecture
 
 ---
 
-## 🏗️ Technology Stack
+## 🏗️ Architecture Overview
 
-<div align="center">
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        LifeSync Architecture                     │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  ┌──────────────────┐        ┌──────────────────┐                │
+│  │    React UI      │        │   Dashboard      │                │
+│  │   (Frontend)     │───────→│  & Analytics     │                │
+│  └──────────────────┘        └──────────────────┘                │
+│          ↓                            ↑                           │
+│          │ HTTP/REST                  │                           │
+│          ↓                            │                           │
+│  ┌──────────────────────────────────────────────┐                │
+│  │      Express Backend (Node.js)               │                │
+│  │  ├─ User Management                          │                │
+│  │  ├─ Data Aggregation                         │                │
+│  │  ├─ Authentication & Auth                    │                │
+│  │  └─ API Gateway                              │                │
+│  └──────────────────────────────────────────────┘                │
+│          ↓                            ↑                           │
+│          │ gRPC/REST                  │                           │
+│          ↓                            │                           │
+│  ┌──────────────────────────────────────────────┐                │
+│  │      FastAPI ML Service (Python)             │                │
+│  │  ├─ Cold-Start Personalization               │                │
+│  │  ├─ User Clustering (GMM)                    │                │
+│  │  ├─ Score Prediction (LightGBM Cascade)     │                │
+│  │  └─ Groq AI Agent Router                     │                │
+│  └──────────────────────────────────────────────┘                │
+│          ↓                            ↑                           │
+│  ┌──────────────────┐        ┌──────────────────┐                │
+│  │ Clustering Models│        │  Prediction Mdls │                │
+│  │ & Feature Maps   │        │  (Health, Mind...) │                │
+│  └──────────────────┘        └──────────────────┘                │
+│                                                                   │
+│  ┌──────────────────────────────────────────────┐                │
+│  │        Groq LLM Integration                  │                │
+│  │  ├─ AI Chat Assistant                        │                │
+│  │  ├─ Smart Recommendations                    │                │
+│  │  └─ Natural Language Queries                 │                │
+│  └──────────────────────────────────────────────┘                │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-| Layer | Technologies |
-|-------|--------------|
-| **Frontend** | <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS"/> |
-| **Backend** | <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/> <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express"/> |
-| **AI/ML** | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/> |
-| **Database** | MongoDB · PostgreSQL · Redis |
-| **Deployment** | Docker · Docker Compose · Cloud Ready |
+---
 
-</div>
+## 📁 Repository Structure
 
-### 📊 Language Composition
+```
+LifeSync/
+│
+├── 🔌 Backend/
+│   ├── package.json              # Dependencies
+│   ├── .env                       # Environment config
+│   ├── Backend/                   # Source code
+│   │   ├── models/                # DB schemas
+│   │   ├── routes/                # API endpoints
+│   │   ├── controllers/           # Business logic
+│   │   └── middleware/            # Auth, validation
+│   └── src/                       # Main application
+│
+├── 💻 Frontend/
+│   ├── package.json
+│   ├── Frontend/                  # React app
+│   │   ├── components/            # Reusable UI components
+│   │   ├── pages/                 # Page routes
+│   │   ├── hooks/                 # Custom React hooks
+│   │   └── services/              # API integrations
+│   ├── public/                    # Static assets
+│   └── src/                       # Source directory
+│
+├── 🧠 LLM/
+│   ├── Agent.py                   # AI Agent core logic
+│   ├── Agent_API.py               # FastAPI server
+│   ├── Router.py                  # Request routing
+│   ├── wrapper.py                 # Model wrappers
+│   ├── main.py                    # Entry point
+│   ├── Config/                    # Configuration files
+│   └── Workers/                   # Worker processes
+│
+├── 🏋️ Models/
+│   ├── Clustering_Dump/
+│   │   ├── cluster_profiles.json  # 12 user profiles
+│   │   ├── feature_influence.json # Feature correlations
+│   │   └── cluster_predictor.joblib
+│   │
+│   ├── Prediction_Dump/
+│   │   ├── health_model.pkl       # Health prediction
+│   │   ├── mind_model.pkl         # Mental wellness
+│   │   ├── productivity_model.pkl # Task optimization
+│   │   ├── finance_model.pkl      # Financial wellness
+│   │   ├── life_model.pkl         # Overall life score
+│   │   └── feature_scaler.pkl
+│   │
+│   ├── Training_Pipeline/
+│   │   ├── Profile_Culstering_Model/
+│   │   │   └── Clusturing_Profile_Model_Train_Pipeline.ipynb
+│   │   └── Score_Prediction_Model/
+│   │       └── Prediction_model.ipynb
+│   │
+│   ├── app.py                     # ML API endpoints
+│   ├── inference.py               # Prediction logic
+│   ├── loader.py                  # Model loading
+│   ├── schemas.py                 # Data validation
+│   └── requirements.txt           # Python dependencies
+│
+├── 📄 README.md                   # This file
+├── 📋 LICENSE                     # MIT License
+└── 📝 CONTRIBUTING.md             # Contribution guidelines
+
+```
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Tech Stack |
+|-------|-----------|
+| **Frontend** | ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript) ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3) |
+| **Backend** | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs) ![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express) ![REST API](https://img.shields.io/badge/REST-API-blue?style=flat) |
+| **AI/ML** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi) ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn) ![LightGBM](https://img.shields.io/badge/LightGBM-grey?style=flat) |
+| **LLM** | ![Groq](https://img.shields.io/badge/Groq_AI-FF6B6B?style=flat) ![LLM](https://img.shields.io/badge/LLM-Integration-blueviolet?style=flat) |
+| **ML Models** | ![GaussianMixture](https://img.shields.io/badge/GaussianMixture-Clustering-blue?style=flat) ![LightGBM](https://img.shields.io/badge/Cascade-Prediction-green?style=flat) |
+| **DevOps** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker) ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git) |
+
+### Language Composition
 
 ```
 JavaScript ████████████████████░░░░░░░░░ 51.3%
@@ -78,142 +219,35 @@ HTML       ░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-## 🎨 Key Features
-
-<table>
-<tr>
-<td>
-
-### 🔐 Smart Backend
-- RESTful API with JWT authentication
-- User data synchronization
-- Task scheduling & notifications
-- Third-party integrations
-- Database persistence
-
-</td>
-<td>
-
-### 🎯 Modern Frontend
-- Responsive React dashboard
-- Real-time calendar & reminders
-- Intuitive task management
-- Chat interface with AI assistant
-- Dark/Light theme support
-
-</td>
-</tr>
-<tr>
-<td>
-
-### 🧠 AI-Powered LLM Service
-- Natural language understanding
-- Intelligent suggestions
-- Conversational workflows
-- Context-aware responses
-- Offline & online inference
-
-</td>
-<td>
-
-### 📦 Model Repository
-- Model artifact storage
-- Version management
-- Easy deployment
-- Support for local & remote models
-- Checkpoint management
-
-</td>
-</tr>
-</table>
-
----
-
-## 📁 Repository Architecture
-
-```
-LifeSync/
-│
-├── 🔌 Backend/
-│   ├── package.json
-│   ├── src/
-│   │   ├── routes/          # API endpoints
-│   │   ├── controllers/     # Business logic
-│   │   ├── middleware/      # Authentication, validation
-│   │   └── models/          # Database schemas
-│   ├── tests/
-│   └── .env.example
-│
-├── 💻 Frontend/
-│   ├── package.json
-│   ├── src/
-│   │   ├── pages/           # Page components
-│   │   ├── components/      # Reusable UI components
-│   │   ├── hooks/           # Custom React hooks
-│   │   ├── services/        # API calls
-│   │   └── styles/          # Global & component CSS
-│   ├── public/
-│   └── .env.example
-│
-├── 🧠 LLM/
-│   ├── requirements.txt
-│   ├── app.py               # FastAPI server
-│   ├── handlers/            # Model inference logic
-│   ├── utils/               # Helper functions
-│   └── .env.example
-│
-├── 🏋️ Models/
-│   ├── README.md            # Model setup guide
-│   ├── model-name-1/        # Model artifacts
-│   └── model-name-2/
-│
-├── 🐳 docker-compose.yml    # Multi-container setup
-├── README.md                # This file
-└── LICENSE
-```
-
----
-
 ## 🚀 Quick Start Guide
 
 ### 📋 Prerequisites
 
-Before you begin, ensure you have installed:
-
-<div align="left">
-
 - ✅ **Node.js** v16+ ([Download](https://nodejs.org/))
 - ✅ **Python** 3.8+ ([Download](https://www.python.org/))
-- ✅ **npm** or **yarn** (comes with Node.js)
+- ✅ **npm** or **yarn**
 - ✅ **Git** ([Download](https://git-scm.com/))
-- ⚙️ **Docker** (Optional, for containerized setup)
-- 🗄️ **Database** – MongoDB, PostgreSQL, or similar
-
-</div>
+- ⚙️ **Docker** (Optional)
+- 🔑 **Groq API Key** (for AI features) – [Get one free](https://console.groq.com/)
 
 ---
 
-### 1️⃣ Backend API Setup
+### 1️⃣ Backend Setup (Node.js + Express)
 
 ```bash
-# Navigate to Backend folder
-cd Backend
-
-# Create environment configuration
-cp .env.example .env
-
-# Configure your .env file with:
-# - DATABASE_URL (MongoDB, PostgreSQL connection)
-# - JWT_SECRET (for authentication)
-# - PORT (default: 4000)
-# - REDIS_URL (optional, for caching)
-# - LLM_SERVICE_URL (http://localhost:8000)
+# Clone repository
+git clone https://github.com/DevSharma03/LifeSync.git
+cd LifeSync/Backend
 
 # Install dependencies
 npm install
 
-# Run migrations (if applicable)
-npm run migrate
+# Configure environment
+cp .env .env.local
+# Edit .env.local with your settings:
+# - PORT=4000
+# - MONGODB_URI=your_mongodb_connection
+# - JWT_SECRET=your_secret_key
 
 # Start development server
 npm run dev
@@ -223,285 +257,444 @@ npm start
 # ✅ Backend running at http://localhost:4000
 ```
 
-#### Backend Environment Variables
+**Environment Variables:**
 ```env
 PORT=4000
-DATABASE_URL=mongodb://localhost:27017/lifesync
-JWT_SECRET=your_super_secret_jwt_key_here
 NODE_ENV=development
-LLM_SERVICE_URL=http://localhost:8000
-REDIS_URL=redis://localhost:6379
+MONGODB_URI=mongodb://localhost:27017/lifesync
+JWT_SECRET=your_jwt_secret_key_here
+ML_SERVICE_URL=http://localhost:9000
+GROQ_API_KEY=your_groq_api_key
 ```
 
 ---
 
-### 2️⃣ Frontend UI Setup
+### 2️⃣ Frontend Setup (React)
 
 ```bash
-# Open new terminal & navigate to Frontend
-cd Frontend
-
-# Create environment configuration
-cp .env.example .env
-
-# Configure your .env file with:
-# - REACT_APP_API_URL=http://localhost:4000
-# - REACT_APP_LLM_URL=http://localhost:8000
+# Navigate to Frontend
+cd LifeSync/Frontend
 
 # Install dependencies
 npm install
 
-# Start development server
+# Configure environment
+cp .env .env.local
+# Edit with your backend URL:
+# REACT_APP_API_URL=http://localhost:4000
+# REACT_APP_LLM_URL=http://localhost:9000
+
+# Start React dev server
 npm start
-# or for Next.js:
-npm run dev
 
 # ✅ Frontend running at http://localhost:3000
 ```
 
-#### Frontend Environment Variables
+**Environment Variables:**
 ```env
 REACT_APP_API_URL=http://localhost:4000
-REACT_APP_LLM_URL=http://localhost:8000
+REACT_APP_LLM_URL=http://localhost:9000
 REACT_APP_ENV=development
 ```
 
 ---
 
-### 3️⃣ LLM Service Setup
+### 3️⃣ LLM/AI Service Setup (Python + FastAPI)
 
 ```bash
-# Open new terminal & navigate to LLM service
-cd LLM
+# Navigate to LLM service
+cd LifeSync/LLM
 
-# Create virtual environment
-python -m venv .venv
+# Create Python virtual environment
+python -m venv venv
 
 # Activate virtual environment
-# On macOS/Linux:
-source .venv/bin/activate
-# On Windows:
-.venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+# Windows:
+venv\Scripts\activate
 
-# Create environment configuration
-cp .env.example .env
-
-# Configure your .env file with:
-# - MODEL_DIR=../Models/your-model-name
-# - API_PORT=8000
-# - OPENAI_API_KEY (if using remote APIs)
-
-# Install Python dependencies
+# Install dependencies
 pip install -r requirements.txt
 
-# Start the LLM service
-# For FastAPI:
+# Configure Groq API
+export GROQ_API_KEY="your_groq_api_key"  # macOS/Linux
+set GROQ_API_KEY=your_groq_api_key       # Windows
+
+# Start FastAPI server
+python main.py
+# or with hot reload:
+uvicorn Agent_API:app --reload --host 0.0.0.0 --port 9000
+
+# ✅ LLM Service running at http://localhost:9000
+```
+
+**Environment Variables:**
+```env
+GROQ_API_KEY=your_groq_api_key_here
+ML_SERVICE_PORT=9000
+AGENT_NAME=LifeSync Assistant
+LOG_LEVEL=INFO
+```
+
+---
+
+### 4️⃣ ML Models Service Setup (Python + FastAPI)
+
+```bash
+# Navigate to Models
+cd LifeSync/Models
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install requirements
+pip install -r requirements.txt
+
+# Start ML inference server
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
 
-# For Flask:
-python app.py
-
-# ✅ LLM Service running at http://localhost:8000
+# ✅ ML Service running at http://localhost:8000
 ```
 
-#### LLM Environment Variables
-```env
-MODEL_DIR=../Models/llama-2-7b
-API_PORT=8000
-MODEL_NAME=llama-2-7b
-OPENAI_API_KEY=your_api_key_here
-DEVICE=cuda  # or cpu
+**API Endpoints:**
+- `POST /infer-profile` – Cold-start user profiling
+- `POST /predict-scores` – Life score predictions
+- `GET /docs` – Interactive API documentation (Swagger UI)
+
+---
+
+## 📚 ML Models Overview
+
+### 🧩 Cold-Start Personalization
+
+**Input:** 15 initial user assessment scores (0-100 scale)
+```python
+[
+  "sleep_quality", "physical_activity_consistency", "diet_quality",
+  "daily_energy_level", "sedentary_level", "stress_level", "anxiety_level",
+  "mood_stability", "mindfulness_habit", "social_support", "focus_ability",
+  "task_completion_reliability", "distraction_level", "financial_discipline",
+  "financial_stress"
+]
+```
+
+**Output:** Complete user profile with 46 features
+
+**Algorithm:** Gaussian Mixture Model (12 clusters) + Feature Influence Mapping
+- **Clustering Accuracy:** 40.6% top-1, 83% top-3
+- **Profile Generation Error:** 27.5% normalized MAE
+- **Confidence Scoring:** Normalized entropy-based confidence
+
+---
+
+### 🎯 Cascade Prediction Model
+
+**5-Tier LightGBM Cascade:**
+
+```
+User Features (46 inputs)
+        ↓
+    Health Model  (10 features) → Health Score
+        ↓
+    Mind Model    (13 features + Health) → Mind Score
+        ↓
+    Productivity  (10 features + Health + Mind) → Productivity Score
+        ↓
+    Finance Model (8 features + Productivity) → Finance Score
+        ↓
+    Life Model    (4 pillars) → Overall Life Score
+```
+
+**Features Per Model:**
+- **Health:** Sleep, exercise, diet, hydration, steps, calories, sedentary time
+- **Mind:** Depression, anxiety, stress, trauma, mood, meditation, breathing, support
+- **Productivity:** Tasks, completion, efficiency, focus, energy levels
+- **Finance:** Budget, expenses, savings, emergency fund, debt
+- **Life:** Weighted combination of all four pillars
+
+---
+
+## 🤖 Groq AI Integration
+
+LifeSync uses **Groq's fast LLM inference** for:
+- 💬 Conversational AI assistant
+- 🎯 Smart recommendations based on life metrics
+- 📊 Insight generation and explanations
+- 🔍 Natural language data queries
+
+```python
+# Example: AI Chat Interface
+POST /api/ai/chat
+{
+  "message": "How can I improve my health score?",
+  "user_profile": { /* 46 features */ },
+  "life_scores": { /* prediction output */ }
+}
+
+Response:
+{
+  "message": "Based on your profile, increasing sleep to 8 hours and adding 3 exercise days would boost your health score by ~15 points...",
+  "recommendations": [ /* personalized actions */ ]
+}
 ```
 
 ---
 
-### 4️⃣ Models Setup
+## 🧪 ML Model Validation
+
+| Metric | Value |
+|--------|-------|
+| **Clustering Top-1 Accuracy** | 40.6% |
+| **Clustering Top-3 Accuracy** | 83% |
+| **Mean Cluster Entropy** | 0.457 (normalized) |
+| **Profile Generation MAE** | 27.5% (normalized) |
+| **Sanity Check Pass Rate** | 100% |
+| **Training Samples** | 20,000 synthetic profiles |
+| **Models Trained** | 7 (1 cluster + 5 predictors + 1 ensemble) |
+
+---
+
+## 📝 Feature Constraints & Semantic Firewall
+
+LifeSync enforces intelligent data validation:
+
+```python
+# Integer Constraints
+exercise_days_per_week: 0-7 days
+meditation_days_per_week: 0-7 days
+tasks_completed: 0-200 per day
+
+# Time Constraints (hours)
+sleep_hours: 0-24 hours
+sedentary_hours: 0-24 hours
+actual_task_hours: 0-24 hours
+
+# Percentage/Score Constraints (0-100)
+task_completion_ratio: 0-100%
+budget_adherence_ratio: 0-100%
+stress_score: 0-100
+anxiety_score: 0-100
+
+# Physical Constraints
+water_intake_liters: 0-10 L/day
+distance_walked_km: 0-100 km
+calories_burned: 0-10,000 kcal
+```
+
+---
+
+## 🔄 API Examples
+
+### Cold-Start Profile Generation
 
 ```bash
-# Navigate to Models directory
-cd Models
-
-# Create model subdirectories
-mkdir -p llama-2-7b
-mkdir -p distilbert-base
-
-# Place your model files here:
-# Models/
-# ├── llama-2-7b/
-# │   ├── config.json
-# │   ├── pytorch_model.bin
-# │   └── tokenizer.json
-# └── distilbert-base/
-#     └── model_files...
-
-# Update LLM/.env with correct MODEL_DIR path
+curl -X POST http://localhost:8000/infer-profile \
+  -H "Content-Type: application/json" \
+  -d '{
+    "sleep_quality": 65,
+    "physical_activity_consistency": 50,
+    "diet_quality": 72,
+    "daily_energy_level": 60,
+    "sedentary_level": 45,
+    "stress_level": 55,
+    "anxiety_level": 48,
+    "mood_stability": 70,
+    "mindfulness_habit": 30,
+    "social_support": 75,
+    "focus_ability": 65,
+    "task_completion_reliability": 60,
+    "distraction_level": 40,
+    "financial_discipline": 68,
+    "financial_stress": 50
+  }'
 ```
 
-**Note:** Large model files should be added to `.gitignore` and downloaded separately. See `Models/README.md` for detailed instructions.
+**Response:**
+```json
+{
+  "cluster_probabilities": [0.05, 0.12, 0.08, ...],
+  "confidence": {
+    "cluster_id": 3,
+    "entropy": 0.42,
+    "confidence": 0.58
+  },
+  "generated_features": {
+    "sleep_hours": 7.2,
+    "exercise_days_per_week": 4,
+    "steps_count": 8500,
+    ...
+  }
+}
+```
 
----
-
-## 🐳 Docker Setup (All Services)
-
-<div align="left">
-
-Run all 4 systems with a single command:
+### Predict Life Scores
 
 ```bash
-# Build and start all services
-docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Stop all services
-docker-compose down
+curl -X POST http://localhost:8000/predict-scores \
+  -H "Content-Type: application/json" \
+  -d '{ /* full profile with 46 features */ }'
 ```
 
-</div>
-
----
-
-## 🔄 Service Communication Flow
-
-```
-┌──────────────┐
-│   Frontend   │ (React @ localhost:3000)
-│  (UI Layer)  │
-└──────┬───────┘
-       │ HTTP/REST
-       ▼
-┌──────────────────────┐
-│  Backend API         │ (Node.js @ localhost:4000)
-│  (Business Logic)    │
-└──────┬───────────────┘
-       │ HTTP/REST
-       ├─────────────────────┐
-       │                     │
-       ▼                     ▼
-    Database             LLM Service
-    (MongoDB)        (Python @ localhost:8000)
-                           │
-                           ▼
-                    Model Artifacts
-                      (Models/)
+**Response:**
+```json
+{
+  "health_score": 72.45,
+  "mind_score": 68.32,
+  "productivity_score": 75.18,
+  "finance_score": 65.89,
+  "life_score": 70.37
+}
 ```
 
 ---
 
-## 💡 Development Workflow
+## 🛣️ Development Workflow
 
-### Best Practices
+### Git Workflow
 
-✨ **Code Organization**
-- Keep each subsystem independent
-- Use clear folder structures (routes, controllers, services)
-- Follow consistent naming conventions
+```bash
+# Main branches:
+main          # ✅ Production-ready (stable)
+develop       # 🔧 Development base branch
 
-🔀 **Git Workflow**
-- `main` – Production-ready, stable code
-- `develop` – Development branch
-- `feature/*` – New features
-- `fix/*` – Bug fixes
-- `hotfix/*` – Emergency production fixes
-
-🧪 **Testing**
-- Write unit tests for critical logic
-- Use integration tests for API endpoints
-- Maintain >80% code coverage
-
-📝 **Commit Messages**
+# Feature workflow:
+feature/*     # 🎯 New features
+fix/*         # 🐛 Bug fixes
+refactor/*    # ♻️ Code improvements
+docs/*        # 📚 Documentation
 ```
-feat: Add new feature description
-fix: Fix bug in component X
-docs: Update README section
-style: Format code according to standards
-refactor: Reorganize module Y
-test: Add test cases for function Z
+
+### Commit Message Format
+
+```
+type(scope): subject
+
+feat(backend): Add user profile API
+fix(frontend): Fix login button validation
+refactor(ml): Optimize model loading
+docs(readme): Update setup instructions
+test(models): Add clustering tests
 ```
 
 ---
 
-## 📚 Environment Variables Summary
+## 📖 Documentation & Learning
 
-| Service | Variable | Purpose | Default |
-|---------|----------|---------|---------|
-| **Backend** | `PORT` | Server port | `4000` |
-| **Backend** | `DATABASE_URL` | Database connection | N/A |
-| **Backend** | `JWT_SECRET` | Authentication token | N/A |
-| **Backend** | `LLM_SERVICE_URL` | LLM service endpoint | `http://localhost:8000` |
-| **Frontend** | `REACT_APP_API_URL` | Backend API URL | `http://localhost:4000` |
-| **Frontend** | `REACT_APP_LLM_URL` | LLM service URL | `http://localhost:8000` |
-| **LLM** | `MODEL_DIR` | Model artifacts path | `../Models` |
-| **LLM** | `API_PORT` | Service port | `8000` |
-| **LLM** | `OPENAI_API_KEY` | External API key | N/A |
+### ML Notebooks
+- **Clustering Pipeline:** `Models/Training_Pipeline/Profile_Culstering_Model/Clusturing_Profile_Model_Train_Pipeline.ipynb`
+- **Prediction Models:** `Models/Training_Pipeline/Score_Prediction_Model/Prediction_model.ipynb`
+
+### LLM Documentation
+- **Agent Details:** `LLM/ReadMe.md`
+- **API Docs:** Available at `http://localhost:9000/docs` (Swagger UI)
+
+### Model Performance Metrics
+- Cold-start profiling accuracy: 83% (top-3)
+- Prediction error: 27.5% MAE (normalized)
+- No sanity violations in validation set
 
 ---
 
 ## 🤝 Contributing
 
-We'd love to have you contribute! Here's how:
+We welcome contributions! Whether you're fixing bugs, adding features, or improving documentation, your help makes LifeSync better.
 
-1. **Fork** the repository
+### How to Contribute
+
+1. **Fork the repository**
    ```bash
    git clone https://github.com/YOUR_USERNAME/LifeSync.git
+   cd LifeSync
    ```
 
 2. **Create a feature branch**
    ```bash
-   git checkout -b feature/amazing-feature
+   git checkout -b feature/your-amazing-feature
    ```
 
-3. **Commit your changes**
+3. **Make your changes**
+   - Write clean, well-documented code
+   - Follow the coding standards
+   - Add tests if applicable
+
+4. **Commit with clear messages**
    ```bash
-   git commit -m "feat: Add amazing feature"
+   git commit -m "feat(module): Add amazing feature description"
    ```
 
-4. **Push to your branch**
+5. **Push and create a Pull Request**
    ```bash
-   git push origin feature/amazing-feature
+   git push origin feature/your-amazing-feature
    ```
 
-5. **Open a Pull Request**
-   - Provide a clear description
-   - Link related issues
-   - Include screenshots if UI changes
+### Code Standards
 
-📖 **See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines**
+- **JavaScript/React:** Use ES6+, Prettier formatting
+- **Python:** PEP 8 style, type hints where applicable
+- **Git:** Meaningful commit messages, atomic commits
+- **Testing:** Write tests for critical features
+- **Documentation:** Update README and docstrings
+
+### Pull Request Checklist
+
+- [ ] Code follows project style guidelines
+- [ ] Self-reviewed your own code
+- [ ] Added/updated tests
+- [ ] Updated documentation
+- [ ] Linked related issues
+- [ ] Tested locally before submitting
+
+### Development Setup
+
+```bash
+# Install pre-commit hooks (optional but recommended)
+pip install pre-commit
+pre-commit install
+```
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Backend won't start
+### Backend Connection Issues
 ```bash
-# Clear node_modules and reinstall
-rm -rf node_modules package-lock.json
-npm install
-npm run dev
+# Verify backend is running
+curl http://localhost:4000
+
+# Check port availability
+lsof -i :4000  # macOS/Linux
+netstat -ano | findstr :4000  # Windows
 ```
 
-### Frontend connection issues
-- Check `REACT_APP_API_URL` in `.env`
-- Ensure Backend is running: `curl http://localhost:4000`
-- Check browser console for CORS errors
+### Frontend API Errors
+- Ensure `.env.local` has correct `REACT_APP_API_URL`
+- Check CORS settings in backend
+- Verify backend is running before starting frontend
 
-### LLM service errors
+### Python/LLM Issues
 ```bash
 # Verify Python version
 python --version  # Should be 3.8+
 
-# Check model files exist
-ls -la Models/
+# Reinstall dependencies
+pip install --upgrade -r requirements.txt
 
-# Verify port isn't in use
-lsof -i :8000
+# Check Groq API key
+echo $GROQ_API_KEY  # macOS/Linux
+echo %GROQ_API_KEY%  # Windows
 ```
 
-### Database connection failed
-- Verify MongoDB/PostgreSQL is running
-- Check `DATABASE_URL` format
-- Ensure firewall allows connections
+### ML Service Problems
+```bash
+# Verify model files exist
+ls -la Models/Clustering_Dump/
+ls -la Models/Prediction_Dump/
+
+# Check feature scaler
+python -c "import joblib; joblib.load('Models/Prediction_Dump/feature_scaler.pkl')"
+```
 
 ---
 
@@ -509,16 +702,17 @@ lsof -i :8000
 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
+MIT License grants you the freedom to use, modify, and distribute this software. Please attribute the original author in your derivative works.
+
 ---
 
 ## 🌟 Acknowledgments
 
-Thank you to all contributors who have helped shape LifeSync! 
-
 Special thanks to:
-- The open-source community
-- Contributors and testers
-- Everyone supporting this project
+- Open-source community for amazing libraries (scikit-learn, LightGBM, FastAPI, React)
+- Groq for providing fast LLM inference
+- Contributors and testers who've helped shape LifeSync
+- You, for being interested in this project! ⭐
 
 ---
 
@@ -526,14 +720,21 @@ Special thanks to:
 
 <div align="center">
 
-**Need help? Have questions?**
+### Get in Touch!
 
-[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-blue?logo=github)](https://github.com/DevSharma03/LifeSync/issues)
-[![GitHub Discussions](https://img.shields.io/badge/GitHub-Discussions-blueviolet?logo=github)](https://github.com/DevSharma03/LifeSync/discussions)
+**👤 Developer:** Devashish Sharma  
+**🔗 LinkedIn:** [linkedin.com/in/devashish-sharma](https://linkedin.com/in/devashish-sharma)  
+**🐙 GitHub:** [@DevSharma03](https://github.com/DevSharma03)  
+**📧 Email:** Contact via GitHub profile
 
-**Maintainer:** [@DevSharma03](https://github.com/DevSharma03)
+### Community & Issues
 
-**Repository:** [DevSharma03/LifeSync](https://github.com/DevSharma03/LifeSync)
+[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-blue?logo=github&style=for-the-badge)](https://github.com/DevSharma03/LifeSync/issues)
+[![GitHub Discussions](https://img.shields.io/badge/GitHub-Discussions-blueviolet?logo=github&style=for-the-badge)](https://github.com/DevSharma03/LifeSync/discussions)
+
+**Have a question?** [Open a discussion](https://github.com/DevSharma03/LifeSync/discussions)  
+**Found a bug?** [Report an issue](https://github.com/DevSharma03/LifeSync/issues)  
+**Got an idea?** [Start a discussion](https://github.com/DevSharma03/LifeSync/discussions)
 
 </div>
 
@@ -541,22 +742,50 @@ Special thanks to:
 
 ## 🎯 Roadmap
 
-- [ ] Mobile app (React Native)
-- [ ] Advanced analytics dashboard
-- [ ] Integration with Google Calendar
-- [ ] Voice-based task creation
-- [ ] Machine learning recommendations
-- [ ] Real-time collaboration features
-- [ ] Desktop app (Electron)
+### Phase 1 (Current) ✅
+- ✅ Core ML models (clustering, prediction)
+- ✅ FastAPI ML service
+- ✅ Express backend
+- ✅ React frontend
+- ✅ Groq AI integration
+
+### Phase 2 (Next)
+- 🔄 Mobile app (React Native)
+- 📱 iOS & Android apps
+- 🔐 Enhanced authentication
+- 📊 Advanced analytics
+- 🔔 Smart notifications
+
+### Phase 3 (Future)
+- 🌍 Multi-language support
+- 🤝 Social features
+- 📈 Enterprise analytics
+- 🔗 Third-party integrations
+- 🎮 Gamification system
+
+---
+
+## 📊 Repository Stats
+
+<div align="center">
+
+![GitHub Stars](https://img.shields.io/github/stars/DevSharma03/LifeSync?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/DevSharma03/LifeSync?style=social)
+![GitHub Watchers](https://img.shields.io/github/watchers/DevSharma03/LifeSync?style=social)
+
+**Languages:** JavaScript • Python • CSS • HTML  
+**Topics:** AI • ML • Full-Stack • LLM • Clustering • FastAPI • React
+
+</div>
 
 ---
 
 <div align="center">
 
-### ⭐ If you found LifeSync helpful, please star us on GitHub!
+### ⭐ Like this project? Please star us on GitHub!
 
-**Built with ❤️ by DevSharma03**
+**Built with ❤️ by [Devashish Sharma](https://github.com/DevSharma03)**
 
-[⬆ Back to Top](#-lifesync--intelligent-personal-assistant-platform)
+[🔝 Back to Top](#-lifesync--intelligent-personal-assistant--life-management-platform)
 
 </div>
