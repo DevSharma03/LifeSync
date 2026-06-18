@@ -1,4 +1,4 @@
-# 🚀 LifeSync – AI-Powered Personal Life Management Platform
+# LifeSync – AI-Powered Personal Life Management Platform
 
 <div align="center">
 
@@ -14,114 +14,101 @@
 
 ---
 
-## 📋 What is LifeSync?
+## Table of Contents
 
-LifeSync is a **full-stack, production-grade personal assistant platform** that uses machine learning and AI to provide intelligent, data-driven insights across four critical life dimensions:
-
-- **🏥 Health** – Sleep, exercise, nutrition, and wellness tracking
-- **🧠 Mental Wellness** – Stress, mood, anxiety, and mindfulness management  
-- **⚡ Productivity** – Task management, focus optimization, time efficiency
-- **💰 Finance** – Budget tracking, expense management, financial wellness
-
-Unlike generic apps, LifeSync **learns your patterns**, **predicts your scores**, and **recommends personalized actions** using advanced ML models and AI conversations.
-
-### Why LifeSync Exists
-
-Most people track these areas in isolation – a fitness app here, a budget app there. LifeSync **unifies everything** into one intelligent system that:
-
-✅ **Connects the dots** between your health, mood, productivity, and finances  
-✅ **Learns from day 1** using intelligent cold-start profiling  
-✅ **Predicts future performance** with cascade ML models  
-✅ **Explains recommendations** with Groq AI conversations  
-✅ **Measures holistic wellness** with a unified Life Score  
+- [Overview](#-overview)
+- [System Architecture](#-system-architecture)
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Setup & Installation](#-setup--installation)
+- [API Reference](#-api-reference)
+- [ML & AI Engine](#-ml--ai-engine)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## 🎯 Core Features
+## 📋 Overview
 
-### 🤖 Intelligent AI & ML Engine
+LifeSync is a **production-grade, full-stack personal assistant platform** designed to unify health, mental wellness, productivity, and financial tracking into a single intelligent system. Unlike isolated tracking apps, LifeSync:
 
-| Feature | Description |
-|---------|-------------|
-| **Cold-Start Personalization** | Complete user profiling from just 15 initial assessment answers |
-| **Smart User Clustering** | 12-cluster Gaussian Mixture Model segments users by lifestyle patterns |
-| **Cascade Predictions** | 5-tier LightGBM models (Health → Mind → Productivity → Finance → Life Score) |
-| **Groq LLM Integration** | Fast, low-latency AI assistant for conversations and recommendations |
-| **Explainable Scores** | Feature importance mapping shows what drives your life metrics |
+- **Connects the dots** between health, mood, productivity, and finances
+- **Learns patterns** using advanced machine learning models trained on 20,000+ synthetic profiles
+- **Generates holistic scores** via a 5-tier cascade prediction pipeline
+- **Provides AI insights** using Groq LLM for personalized recommendations
+- **Profiles users instantly** with cold-start learning from just 15 initial questions
 
-### 📊 Data & Analytics
+### Core Value Proposition
 
-- **46+ tracked metrics** across 4 life dimensions
-- **Semantic validation firewall** ensures data integrity
-- **Confidence scoring** with normalized entropy tracking
-- **Real-time dashboards** with visual analytics
-- **Historical trend analysis** and pattern detection
-
-### 🛠️ Production-Ready Architecture
-
-- **Microservices design** – Decoupled, scalable components
-- **REST APIs** for easy integration
-- **Docker-ready** for containerized deployment
-- **Modular ML pipeline** – Easy to retrain and improve
-- **7 trained models** on 20,000+ synthetic profiles
+| Feature | Benefit |
+|---------|---------|
+| **Unified Platform** | No app-switching; all life dimensions in one place |
+| **ML-Powered** | 7 trained models with feature engineering |
+| **Cold-Start Profiling** | Complete user profile generation from minimal data |
+| **Explainable Scores** | Feature importance mapping shows drivers of life metrics |
+| **AI Assistant** | Context-aware recommendations via Groq integration |
+| **46+ Metrics** | Comprehensive tracking across 4 life dimensions |
 
 ---
 
-## 🏗️ How It Works
+## 🏗️ System Architecture
 
-### System Architecture
+### High-Level Overview
 
 ```
-┌─────────────────────────────────────────────────────┐
-│              LifeSync Full Stack                    │
-├─────────────────────────────────────────────────────┤
-│                                                      │
-│  Frontend (React)  ←→  Backend (Node.js/Express)  │
-│                                                      │
-│         ↓ REST API ↓                                │
-│                                                      │
-│  ML Service (Python/FastAPI)                       │
-│  ├─ Clustering & Profiling                         │
-│  ├─ Score Predictions                              │
-│  └─ Feature Analysis                               │
-│                                                      │
-│         ↓ API Call ↓                                │
-│                                                      │
-│  LLM Service (Groq AI)                             │
-│  ├─ AI Chat Assistant                              │
-│  ├─ Smart Recommendations                          │
-│  └─ Insight Generation                             │
-│                                                      │
-└─────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                 LifeSync Full Stack                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌─────────────┐         ┌──────────────┐                  │
+│  │React        │◄──────► │Express       │                  │
+│  │Frontend     │ REST    │Backend       │                  │
+│  │(Port 3000)  │ API     │(Port 4000)   │                  │
+│  └─────────────┘         └──────────────┘                  │
+│                                │                            │
+│                                │                            │
+│  ┌──────────────────┐   ┌─────▼─────────┐                 │
+│  │FastAPI ML       │   │Groq LLM       │                  │
+│  │Service          │   │Service        │                  │
+│  │(Port 8000)      │   │(Port 9000)    │                  │
+│  │                  │   │                │                 │
+│  │• Clustering      │   │• Chat Agent   │                 │
+│  │• Profiling       │   │• Insights     │                 │
+│  │• Predictions     │   │• Recommend    │                 │
+│  └──────────────────┘   └───────────────┘                 │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### 3-Step User Flow
+### Data Flow
 
 **1. Cold-Start Profiling**
 ```
-User Input (15 quick questions) 
+Initial Assessment (15 Questions)
     ↓
-Gaussian Mixture Model (12 clusters)
+Gaussian Mixture Model (12 Clusters)
     ↓
-Generate 46 complete user features
+Feature Influence Mapping
+    ↓
+Complete User Profile (46 Features)
 ```
 
 **2. Cascade Predictions**
 ```
-User Profile (46 features)
-    ↓
-Health Model → Health Score
-    ↓
-Mind Model (+ Health) → Mind Score
-    ↓
-Productivity Model (+ Health + Mind) → Productivity Score
-    ↓
-Finance Model (+ Productivity) → Finance Score
-    ↓
-Life Model (All 4 pillars) → Overall Life Score
+User Profile (46 Features)
+    ↓ LightGBM Model 1
+Health Score
+    ↓ LightGBM Model 2
+Mind Score (+ Health Features)
+    ↓ LightGBM Model 3
+Productivity Score (+ Health + Mind)
+    ↓ LightGBM Model 4
+Finance Score (+ Productivity)
+    ↓ LightGBM Model 5
+Life Score (Weighted 4 Pillars)
 ```
 
-**3. AI Insights**
+**3. AI-Driven Insights**
 ```
 Scores + User Profile
     ↓
@@ -129,7 +116,29 @@ Groq LLM Processing
     ↓
 Personalized Recommendations
     ↓
-Chat-Based Explanations
+Conversational Insights
+```
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technologies |
+|-------|--------------|
+| **Frontend** | React 19.1, React Router 7.8, Recharts (charting), Lucide React (icons) |
+| **Backend** | Node.js, Express 5.1, MongoDB (Mongoose 8.19), JWT Auth, Bcrypt |
+| **ML/AI** | Python 3.8+, FastAPI, scikit-learn, LightGBM, Pandas, NumPy |
+| **LLM Integration** | Groq API, Google Generative AI (Gemini), FastAPI |
+| **DevOps** | Docker, Git, Environment-based configuration |
+| **Testing** | React Testing Library, Jest |
+
+**Repository Language Composition:**
+```
+JavaScript:       51.3%  (Frontend + Backend)
+CSS:             29.6%  (Styling)
+Jupyter:         11.2%  (ML Training Pipelines)
+Python:           5.9%  (ML/LLM Services)
+Jinja/HTML:       2.0%  (Templates)
 ```
 
 ---
@@ -139,93 +148,122 @@ Chat-Based Explanations
 ```
 LifeSync/
 │
-├── Backend/                          # Node.js + Express REST API
+├── Backend/                              # Node.js + Express REST API
 │   ├── src/
-│   │   ├── models/                  # Database schemas
-│   │   ├── routes/                  # API endpoints
-│   │   ├── controllers/             # Business logic
-│   │   └── middleware/              # Auth, validation
+│   │   ├── server.js                    # Express app initialization
+│   │   ├── models/                      # MongoDB Mongoose schemas
+│   │   │   ├── User.js
+│   │   │   ├── Profile.js
+│   │   │   └── Scores.js
+│   │   ├── routes/                      # API endpoint definitions
+│   │   │   ├── auth.js
+│   │   │   ├── user.js
+│   │   │   ├── scores.js
+│   │   │   └── predictions.js
+│   │   ├── controllers/                 # Business logic handlers
+│   │   ├── middleware/                  # Auth, validation, error handling
+│   │   └── config/                      # Database & service configs
 │   ├── package.json
-│   └── .env                         # Configuration
+│   ├── .env.example
+│   └── .gitignore
 │
-├── Frontend/                         # React + Modern UI
+├── Frontend/                             # React + Vite Single Page App
 │   ├── src/
-│   │   ├── components/              # Reusable UI components
-│   │   ├── pages/                   # Route pages
-│   │   ├── hooks/                   # Custom React hooks
-│   │   └── services/                # API integrations
+│   │   ├── index.js
+│   │   ├── App.jsx                      # Main app component
+│   │   ├── components/
+│   │   │   ├── Dashboard/               # Main dashboard
+│   │   │   ├── LifeScore/              # Score visualization
+│   │   │   ├── Assessment/             # Initial assessment form
+│   │   │   ├── Recommendations/        # AI recommendations panel
+│   │   │   └── Common/                 # Reusable UI components
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── Profile.jsx
+│   │   ├── services/
+│   │   │   ├── api.js                  # Axios instance & API calls
+│   │   │   ├── auth.js
+│   │   │   └── ml.js                   # ML service integration
+│   │   ├── hooks/                      # Custom React hooks
+│   │   └── styles/                     # Global & component styles
 │   ├── package.json
-│   └── .env                         # Configuration
+│   ├── .env.example
+│   └── public/
 │
-├── LLM/                              # FastAPI AI Service
-│   ├── Agent.py                     # AI agent logic
-│   ├── Agent_API.py                 # FastAPI server
-│   ├── Router.py                    # Request routing
-│   ├── Config/                      # Settings
+├── LLM/                                  # FastAPI AI Agent Service
+│   ├── Agent.py                         # Core AI logic
+│   ├── Agent_API.py                     # FastAPI endpoint handlers
+│   ├── Router.py                        # Request routing logic
+│   ├── wrapper.py                       # Groq client wrapper
+│   ├── Workers/                         # Domain-specific workers
+│   │   ├── Health_worker/
+│   │   │   ├── wrapper.py               # Gemini API wrapper
+│   │   │   └── config/config.json
+│   │   ├── Mind_worker/
+│   │   ├── Productivity_worker/
+│   │   ├── Finance_worker/
+│   │   └── Fitness_worker/
+│   ├── Config/
+│   │   └── Config.json                  # API keys & model config
 │   ├── requirements.txt
-│   └── main.py
+│   ├── main.py                          # FastAPI application entry
+│   └── .env.example
 │
-└── Models/                           # ML Training & Inference
+└── Models/                               # ML Training & Inference
     ├── Clustering_Dump/
-    │   ├── cluster_profiles.json
-    │   ├── feature_influence.json
-    │   └── cluster_predictor.joblib
+    │   ├── cluster_profiles.json        # 12 cluster centroids (46 features each)
+    │   ├── feature_influence.json       # Feature importance per cluster
+    │   └── cluster_predictor.joblib     # Trained GMM model
+    │
     ├── Prediction_Dump/
-    │   ├── health_model.pkl
-    │   ├── mind_model.pkl
-    │   ├── productivity_model.pkl
-    │   ├── finance_model.pkl
-    │   ├── life_model.pkl
-    │   └── feature_scaler.pkl
+    │   ├── health_model.pkl             # LightGBM health score predictor
+    │   ├── mind_model.pkl               # Mental wellness predictor
+    │   ├── productivity_model.pkl       # Productivity score predictor
+    │   ├── finance_model.pkl            # Finance score predictor
+    │   ├── life_model.pkl               # Overall life score predictor
+    │   └── feature_scaler.pkl           # StandardScaler for all features
+    │
     ├── Training_Pipeline/
     │   ├── Clustering_Profile_Model_Train_Pipeline.ipynb
+    │   │   └── Trains Gaussian Mixture Model on synthetic profiles
+    │   │   └── Generates feature influence mappings
+    │   │   └── Validates cluster coherence
+    │   │
     │   └── Prediction_model.ipynb
-    ├── app.py                       # ML API
+    │       └── Trains 5-tier LightGBM cascade
+    │       └── Handles feature engineering
+    │       └── Evaluates model performance
+    │
+    ├── app.py                           # FastAPI inference server
+    ├── schemas.py                       # Pydantic models for validation
     ├── requirements.txt
-    └── schemas.py
+    └── .env.example
 ```
 
 ---
 
-## 🛠️ Tech Stack
-
-| Component | Technology |
-|-----------|-----------|
-| **Frontend** | React, JavaScript, CSS3, Responsive Design |
-| **Backend** | Node.js, Express.js, REST APIs |
-| **AI/ML** | Python, FastAPI, scikit-learn, LightGBM |
-| **LLM** | Groq AI, Natural Language Processing |
-| **DevOps** | Docker, Git, Environment Management |
-| **Database** | MongoDB (configured in Backend) |
-
-**Language Composition:**
-- JavaScript: 51.3%
-- CSS: 29.6%
-- Jupyter Notebooks: 11.2%
-- Python: 5.9%
-- Other: 2%
-
----
-
-## 🚀 Quick Start
+## 🚀 Setup & Installation
 
 ### Prerequisites
 
 ```
-✅ Node.js v16+
+✅ Node.js v16+ and npm/yarn
 ✅ Python 3.8+
-✅ npm or yarn
-✅ Groq API Key (free from https://console.groq.com/)
+✅ MongoDB (local or Atlas connection string)
+✅ Groq API Key (free: https://console.groq.com/)
+✅ Google Gemini API Key (optional, for extended workers)
 ```
 
-### 1️⃣ Clone & Setup
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/DevSharma03/LifeSync.git
 cd LifeSync
 ```
 
-### 2️⃣ Backend (Node.js)
+### 2. Backend Setup (Node.js + Express)
 
 ```bash
 cd Backend
@@ -233,22 +271,38 @@ cd Backend
 # Install dependencies
 npm install
 
-# Configure environment
+# Create environment file
 cat > .env << EOF
+# Server
 PORT=4000
 NODE_ENV=development
+
+# Database
 MONGODB_URI=mongodb://localhost:27017/lifesync
-JWT_SECRET=your_jwt_secret_key
-ML_SERVICE_URL=http://localhost:9000
-GROQ_API_KEY=your_groq_api_key
+# or MongoDB Atlas:
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/lifesync
+
+# Authentication
+JWT_SECRET=your_super_secret_jwt_key_change_this
+JWT_EXPIRE=7d
+
+# ML Services
+ML_SERVICE_URL=http://localhost:8000
+LLM_SERVICE_URL=http://localhost:9000
+
+# External APIs
+GROQ_API_KEY=your_groq_api_key_here
 EOF
 
-# Start server
-npm run dev
-# ✅ Running at http://localhost:4000
+# Verify database connection
+node -e "require('mongoose').connect(process.env.MONGODB_URI).then(() => console.log('✅ MongoDB connected')).catch(e => console.log('❌ Error:', e.message))"
+
+# Start development server (with hot-reload via nodemon)
+npm start
+# ✅ Server running at http://localhost:4000
 ```
 
-### 3️⃣ Frontend (React)
+### 3. Frontend Setup (React)
 
 ```bash
 cd Frontend
@@ -256,298 +310,505 @@ cd Frontend
 # Install dependencies
 npm install
 
-# Configure environment
+# Create environment file
 cat > .env << EOF
 REACT_APP_API_URL=http://localhost:4000
+REACT_APP_ML_URL=http://localhost:8000
 REACT_APP_LLM_URL=http://localhost:9000
 REACT_APP_ENV=development
 EOF
 
 # Start development server
 npm start
-# ✅ Running at http://localhost:3000
+# ✅ Application running at http://localhost:3000
 ```
 
-### 4️⃣ ML Service (Python)
+### 4. ML Service Setup (Python FastAPI)
 
 ```bash
 cd Models
 
-# Create virtual environment
+# Create Python virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Activate virtual environment
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+# venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Start ML inference server
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
-# ✅ Running at http://localhost:8000
+# ✅ ML API running at http://localhost:8000
+# 📚 Interactive docs at http://localhost:8000/docs
 ```
 
-### 5️⃣ LLM Service (Python)
+### 5. LLM Service Setup (Groq AI Agent)
 
 ```bash
 cd LLM
 
-# Create virtual environment
+# Create Python virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Configure Groq API
-export GROQ_API_KEY="your_groq_api_key"  # Linux/macOS
-# or on Windows: set GROQ_API_KEY=your_groq_api_key
+# Configure environment
+cat > .env << EOF
+GROQ_API_KEY=your_groq_api_key
+GROQ_MODEL=mixtral-8x7b-32768
+GEMINI_API_KEYS=["key1", "key2"]  # Optional for workers
+EOF
 
 # Start FastAPI server
 python main.py
 # or with auto-reload:
-# uvicorn Agent_API:app --reload --host 0.0.0.0 --port 9000
-# ✅ Running at http://localhost:9000
+uvicorn Agent_API:app --reload --host 0.0.0.0 --port 9000
+# ✅ LLM API running at http://localhost:9000
+```
+
+### Verify All Services
+
+```bash
+# Backend
+curl http://localhost:4000
+
+# Frontend
+curl http://localhost:3000
+
+# ML Service
+curl http://localhost:8000/docs
+
+# LLM Service
+curl http://localhost:9000/docs
 ```
 
 ---
 
-## 📚 ML Models Deep Dive
+## 🔌 API Reference
 
-### Cold-Start Profiling Model
+### ML Service (FastAPI) – Port 8000
 
-**Problem:** How do we create a complete user profile from minimal initial data?
+#### Generate User Profile
 
-**Solution:** Gaussian Mixture Model + Feature Influence Mapping
+```http
+POST /infer-profile
+Content-Type: application/json
 
-- **Input:** 15 quick assessment questions (sleep quality, stress, fitness habits, etc.)
-- **Process:** Cluster user into one of 12 lifestyle profiles
-- **Output:** Generate 46 complete user features
-- **Accuracy:** 83% top-3 clustering accuracy
-
-```python
-# Example Input
 {
   "sleep_quality": 65,
   "stress_level": 55,
   "exercise_frequency": 50,
   "diet_quality": 72,
-  ...
+  "hydration": 60,
+  "meditation_frequency": 30,
+  "work_hours": 8,
+  "financial_stress": 45
 }
 
-# Example Output
+Response:
 {
   "cluster_id": 3,
-  "confidence": 0.82,
-  "generated_features": {
+  "cluster_confidence": 0.82,
+  "profile": {
     "sleep_hours": 7.2,
     "exercise_days_per_week": 4,
-    "steps_count": 8500,
+    "steps_per_day": 8500,
     "water_intake_liters": 2.5,
+    ... (46 features total)
+  }
+}
+```
+
+#### Predict Life Scores
+
+```http
+POST /predict-scores
+Content-Type: application/json
+
+{
+  "sleep_hours": 7.2,
+  "exercise_days_per_week": 4,
+  "stress_score": 55,
+  ... (46 features)
+}
+
+Response:
+{
+  "health_score": 78,
+  "mind_score": 72,
+  "productivity_score": 81,
+  "finance_score": 65,
+  "life_score": 74,
+  "feature_importance": {
+    "health": ["sleep_hours", "exercise_frequency", "diet_quality"],
+    "mind": ["stress_level", "meditation", "social_connection"],
     ...
   }
 }
 ```
 
-### Cascade Prediction Models
+**Full API Docs:** `http://localhost:8000/docs` (Swagger UI)
 
-**Problem:** How do we predict holistic life scores that account for interconnections?
+---
 
-**Solution:** 5-tier LightGBM cascade where each model builds on previous scores
+### LLM Service (FastAPI) – Port 9000
 
+#### Chat with AI Assistant
+
+```http
+POST /query
+Content-Type: application/json
+
+{
+  "user_query": "How can I improve my health score?",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Previous context..."
+    }
+  ]
+}
+
+Response:
+{
+  "response": "Based on your profile, you're averaging 6.2 hours of sleep but your cluster typically needs 7-8 hours. Increasing sleep by 1-2 hours would boost your health score by ~15 points..."
+}
 ```
-User Profile (46 features)
-    ↓ LightGBM Model 1
-Health Score (based on sleep, exercise, diet, hydration)
-    ↓ LightGBM Model 2
-Mind Score (stress, anxiety, mood + health data)
-    ↓ LightGBM Model 3
-Productivity Score (task completion, focus + mental state)
-    ↓ LightGBM Model 4
-Finance Score (budget adherence + life stress)
-    ↓ LightGBM Model 5
-Life Score (weighted combination of all 4 pillars)
-```
 
-**Model Performance:**
-- Top-1 Clustering Accuracy: 40.6%
-- Top-3 Clustering Accuracy: 83%
-- Profile Generation MAE: 27.5% (normalized)
-- 0% Sanity Check Violations
-- Trained on 20,000 synthetic profiles
+#### Get Recommendations
 
-### Feature Constraints (Semantic Firewall)
+```http
+POST /api/recommend
+Content-Type: application/json
 
-All data is validated to ensure physical and logical consistency:
+{
+  "user_profile": { /* 46 features */ },
+  "current_scores": {
+    "health_score": 78,
+    "mind_score": 72,
+    ...
+  }
+}
 
-```python
-# Time-based constraints
-sleep_hours: 0-24 hours
-sedentary_hours: 0-24 hours
-exercise_hours: 0-24 hours
-
-# Count-based constraints
-exercise_days_per_week: 0-7
-meditation_days_per_week: 0-7
-tasks_completed_per_day: 0-200
-
-# Percentage-based constraints
-budget_adherence: 0-100%
-task_completion_ratio: 0-100%
-stress_score: 0-100
-
-# Physical constraints
-water_intake_liters: 0-10 L/day
-distance_walked_km: 0-100 km
-calories_burned: 0-10000 kcal
+Response:
+{
+  "recommendations": [
+    {
+      "domain": "Health",
+      "action": "Increase sleep to 7-8 hours",
+      "impact": "+15 points to health score",
+      "priority": "high"
+    },
+    ...
+  ]
+}
 ```
 
 ---
 
-## 🤖 Groq AI Integration
+### Backend API (Express) – Port 4000
 
-LifeSync uses **Groq's fast LLM inference** to power:
+#### Authentication
+
+```http
+POST /api/auth/register
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "secure_password"
+}
+
+Response: { token, user }
+```
+
+```http
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "secure_password"
+}
+
+Response: { token, user }
+```
+
+#### User Profile
+
+```http
+GET /api/user/profile
+Authorization: Bearer <token>
+
+Response: { email, createdAt, profile_data }
+```
+
+```http
+PUT /api/user/profile
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "sleep_quality": 70,
+  "stress_level": 50,
+  ...
+}
+```
+
+#### Life Scores
+
+```http
+GET /api/scores
+Authorization: Bearer <token>
+
+Response: {
+  "health_score": 78,
+  "mind_score": 72,
+  "productivity_score": 81,
+  "finance_score": 65,
+  "life_score": 74,
+  "last_updated": "2024-01-15T10:30:00Z"
+}
+```
+
+```http
+POST /api/scores/calculate
+Authorization: Bearer <token>
+
+Response: { scores, recommendations }
+```
+
+---
+
+## 🤖 ML & AI Engine
+
+### Cold-Start Profiling Model
+
+**Problem:** Generate complete user profiles from minimal initial data
+
+**Solution:** Gaussian Mixture Model (GMM) + Feature Influence Mapping
 
 ```
-💬 AI Chat Assistant         → Answer user questions about their life
-📊 Smart Recommendations     → Personalized actions to improve scores
-🎯 Insight Generation        → Explain trends and patterns
-🔍 Natural Language Queries  → Understand what users want to know
+Input: 15 Quick Assessment Questions
+   ↓
+GMM Clustering (12 Clusters, 20,000 Training Profiles)
+   ↓
+Feature Influence Mapping (Which features define each cluster?)
+   ↓
+Output: 46-Feature Complete User Profile
 ```
+
+**Key Metrics:**
+- **Top-1 Accuracy:** 40.6%
+- **Top-3 Accuracy:** 83%
+- **Profile Generation MAE:** 27.5% (normalized)
+- **Zero Sanity Check Violations**
+
+**Example:**
+```python
+Input Assessment:
+{
+  "sleep_quality": 65,
+  "stress_level": 55,
+  "exercise_frequency": 50
+}
+
+Generated Profile:
+{
+  "sleep_hours": 7.2,
+  "stress_score": 55,
+  "exercise_days_per_week": 4,
+  "steps_per_day": 8500,
+  "water_intake_liters": 2.5,
+  ...  # 41 more features
+}
+```
+
+### Cascade Prediction Pipeline
+
+**Problem:** Predict holistic life scores accounting for interconnections
+
+**Solution:** 5-Tier LightGBM Cascade
+
+```
+Tier 1: Health Score Model
+├─ Input: 12 health-related features
+├─ Output: Health Score (0-100)
+└─ Training Data: 20,000 profiles
+
+Tier 2: Mind Score Model
+├─ Input: 8 mental wellness features + Health Score
+├─ Output: Mind Score (0-100)
+└─ Learns from both raw features and health impact
+
+Tier 3: Productivity Score Model
+├─ Input: 10 productivity features + Health + Mind Scores
+├─ Output: Productivity Score (0-100)
+└─ Captures how health/mind affects productivity
+
+Tier 4: Finance Score Model
+├─ Input: 8 finance features + Productivity Score
+├─ Output: Finance Score (0-100)
+└─ Models financial stress from overall life status
+
+Tier 5: Life Score Model
+├─ Input: All 4 dimension scores (weighted)
+├─ Output: Overall Life Score (0-100)
+└─ Final holistic wellness metric
+```
+
+**Feature Constraints (Semantic Firewall)**
+
+All predictions are validated to ensure physical/logical consistency:
+
+```python
+# Time Constraints (24-hour day)
+sleep_hours: [0, 24]
+sedentary_hours: [0, 24]
+exercise_hours: [0, 24]
+
+# Weekly Constraints
+exercise_days_per_week: [0, 7]
+meditation_days_per_week: [0, 7]
+work_days_per_week: [0, 7]
+
+# Score Constraints
+health_score: [0, 100]
+stress_score: [0, 100]
+budget_adherence: [0, 100]
+
+# Physical Constraints
+water_intake_liters: [0, 10]
+distance_walked_km: [0, 100]
+calories_burned: [0, 10000]
+```
+
+### Groq LLM Integration
+
+LifeSync uses **Groq's fast LLM inference** for:
+
+| Task | Purpose |
+|------|---------|
+| **Chat Agent** | Answer user questions about their life metrics |
+| **Recommendations** | Generate personalized actions to improve scores |
+| **Insights** | Explain trends, patterns, and causality |
+| **Natural Language** | Understand user intent without structured input |
 
 **Example Conversation:**
 ```
-User: "How can I improve my health score?"
+User: "Why is my productivity score lower than last week?"
 
-AI Response: "Based on your profile, you're averaging 6.2 hours of sleep 
-but your cluster typically needs 7-8 hours. Increasing sleep and adding 
-2-3 exercise days would boost your health score by ~15 points. You have 
-good diet quality (72), so maintain that!"
-```
+AI: "Your productivity score dropped from 81 to 76 because:
+1. Sleep decreased from 7.2 to 6.5 hours (primary factor)
+2. Stress increased from 55 to 62
+3. Exercise frequency stayed constant
 
----
-
-## 🔌 API Endpoints
-
-### ML Service (Port 8000)
-
-```bash
-# Generate user profile from initial assessment
-POST /infer-profile
-{
-  "sleep_quality": 65,
-  "physical_activity_consistency": 50,
-  ...
-}
-
-# Predict life scores
-POST /predict-scores
-{
-  "sleep_hours": 7.2,
-  "exercise_days_per_week": 4,
-  ...
-}
-
-# Interactive API docs
-GET /docs  # Swagger UI at http://localhost:8000/docs
-```
-
-### LLM Service (Port 9000)
-
-```bash
-# Chat with AI assistant
-POST /api/chat
-{
-  "message": "How can I improve my health?",
-  "user_profile": { /* 46 features */ },
-  "scores": { /* prediction output */ }
-}
-
-# Get recommendations
-POST /api/recommend
-{
-  "user_profile": { /* features */ }
-}
-```
-
-### Backend (Port 4000)
-
-```bash
-# User authentication
-POST /api/auth/register
-POST /api/auth/login
-
-# User data
-GET /api/user/profile
-PUT /api/user/profile
-
-# Life scores
-GET /api/scores
-POST /api/scores/calculate
+Recommendation: Focus on sleep restoration. Adding 1 hour of sleep 
+would likely restore productivity score to 80+. Combined with reducing 
+stress by 5 points through meditation, you'd reach 83-85."
 ```
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Backend won't start
+### Backend Connection Issues
 
 ```bash
-# Check if port 4000 is in use
-lsof -i :4000              # macOS/Linux
-netstat -ano | findstr 4000 # Windows
+# Check if MongoDB is running
+mongosh  # or mongo on older versions
 
-# Verify environment variables
-cat Backend/.env
+# Verify MongoDB URI
+cat Backend/.env | grep MONGODB_URI
 
-# Check MongoDB connection
-mongosh
+# Test connection directly
+node << 'EOF'
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('✅ Connected'))
+  .catch(e => console.log('❌', e.message));
+EOF
 ```
 
-### Frontend shows API errors
+### Port Already in Use
 
 ```bash
-# Verify backend is running
+# Find process using port
+# macOS/Linux:
+lsof -i :4000   # Backend
+lsof -i :3000   # Frontend
+lsof -i :8000   # ML Service
+lsof -i :9000   # LLM Service
+
+# Windows:
+netstat -ano | findstr :4000
+
+# Kill process
+kill -9 <PID>  # macOS/Linux
+taskkill /PID <PID> /F  # Windows
+```
+
+### ML Model Loading Errors
+
+```bash
+cd Models
+
+# Verify model files exist
+ls Prediction_Dump/
+# Output should show: health_model.pkl, mind_model.pkl, etc.
+
+# Test model loading
+python << 'EOF'
+import joblib
+try:
+    model = joblib.load('Prediction_Dump/health_model.pkl')
+    print('✅ Models loaded successfully')
+except Exception as e:
+    print(f'❌ Error: {e}')
+EOF
+```
+
+### Groq API Errors
+
+```bash
+# Verify API key is set
+echo $GROQ_API_KEY  # macOS/Linux
+echo %GROQ_API_KEY%  # Windows
+
+# Test API connectivity
+curl https://api.groq.com/openai/v1/chat/completions \
+  -H "Authorization: Bearer $GROQ_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"mixtral-8x7b-32768","messages":[{"role":"user","content":"Hi"}]}'
+```
+
+### Frontend API Integration
+
+```bash
+# Verify backend is reachable
 curl http://localhost:4000
 
 # Check .env configuration
 cat Frontend/.env
 
-# Clear cache and restart
-npm cache clean --force
+# Clear cache and rebuild
+cd Frontend
+rm -rf node_modules package-lock.json
+npm install
 npm start
-```
-
-### Python/ML Service issues
-
-```bash
-# Verify Python version
-python --version  # Should be 3.8+
-
-# Check virtual environment
-which python  # Should show path in venv
-
-# Reinstall dependencies
-pip install --upgrade -r requirements.txt
-
-# Test model loading
-python -c "import joblib; joblib.load('Models/Prediction_Dump/health_model.pkl')"
-```
-
-### Groq API errors
-
-```bash
-# Verify API key is set
-echo $GROQ_API_KEY  # macOS/Linux
-echo %GROQ_API_KEY% # Windows
-
-# Test API connectivity
-curl https://api.groq.com/health  # if endpoint exists
 ```
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how:
+We welcome contributions! Follow these guidelines:
 
 ### 1. Fork & Clone
 
@@ -560,37 +821,64 @@ cd LifeSync
 
 ```bash
 git checkout -b feature/your-feature-name
+# or bugfix/issue-description
 ```
 
 ### 3. Make Changes
 
 - Follow existing code style
-- Add tests if applicable
+- Add tests for new features
 - Update documentation
-- Keep commits atomic and descriptive
+- Write atomic, descriptive commits
 
-### 4. Submit Pull Request
+### 4. Commit & Push
 
 ```bash
+git add .
+git commit -m "feat(component): Add new feature description"
 git push origin feature/your-feature-name
-# Create PR on GitHub
 ```
 
-### Code Guidelines
+### 5. Submit Pull Request
 
-- **JavaScript/React:** ES6+, Prettier formatting
-- **Python:** PEP 8 style, type hints
-- **Git:** Meaningful commit messages
-- **Testing:** Write tests for critical features
+Open a PR with:
+- Clear description of changes
+- Link to related issues
+- Screenshots for UI changes
+- Test results
 
-### Commit Message Format
+### Code Style Guidelines
 
+**JavaScript/React:**
+```javascript
+// Use ES6+ syntax
+const handleClick = async () => { /* ... */ };
+
+// Use functional components
+export default function MyComponent() {
+  return <div>...</div>;
+}
 ```
-feat(component): Add new feature
-fix(component): Resolve bug
-refactor(component): Improve code
-docs(component): Update documentation
-test(component): Add test coverage
+
+**Python:**
+```python
+# Follow PEP 8
+def predict_scores(profile: dict) -> dict:
+    """Predict life scores from user profile."""
+    return scores
+
+# Use type hints
+from typing import Dict, List
+```
+
+**Git Commit Format:**
+```
+feat(module): Add new feature
+fix(module): Resolve specific bug
+refactor(module): Improve code structure
+docs(module): Update documentation
+test(module): Add test coverage
+chore(module): Update dependencies
 ```
 
 ---
@@ -598,35 +886,35 @@ test(component): Add test coverage
 ## 📈 Roadmap
 
 ### ✅ Phase 1 (Current)
-- Core ML models (clustering, prediction cascade)
-- FastAPI ML inference service
-- Express REST backend
-- React frontend
-- Groq AI integration
+- [x] Core ML models (GMM clustering, 5-tier LightGBM)
+- [x] FastAPI ML inference service
+- [x] Express REST backend with MongoDB
+- [x] React dashboard frontend
+- [x] Groq AI integration
+- [x] Cold-start profiling
 
-### 🔄 Phase 2 (Next)
-- Mobile app (React Native)
-- iOS & Android native apps
-- Enhanced authentication (OAuth, 2FA)
-- Advanced analytics dashboard
-- Smart push notifications
+### 🔄 Phase 2 (Next 3 months)
+- [ ] Mobile app (React Native)
+- [ ] Enhanced authentication (OAuth, 2FA)
+- [ ] Advanced analytics dashboard
+- [ ] Notification system
+- [ ] Real-time score updates
 
 ### 🎯 Phase 3 (Future)
-- Multi-language support
-- Social/community features
-- Enterprise analytics
-- Third-party integrations (Fitbit, YNAB, etc.)
-- Gamification system
+- [ ] Third-party integrations (Fitbit, YNAB, Calendar)
+- [ ] Multi-language support
+- [ ] Social/community features
+- [ ] Gamification system
+- [ ] Enterprise analytics
 
 ---
 
-## 📝 Documentation
+## 📚 Additional Documentation
 
-- **ML Training:** See `Models/Training_Pipeline/` notebooks
-- **LLM Details:** Check `LLM/README.md`
-- **API Docs:** Available at `http://localhost:8000/docs` (Swagger UI)
-- **Backend Setup:** See `Backend/.env.example`
-- **Frontend Setup:** See `Frontend/.env.example`
+- **[ML Training Pipeline](Models/Training_Pipeline/)** – Jupyter notebooks for model training
+- **[LLM Agent Details](LLM/)** – AI agent architecture and worker system
+- **[API Documentation](Models/app.py#L1-L50)** – Swagger UI at `http://localhost:8000/docs`
+- **[Environment Variables](Backend/.env.example)** – Configuration reference
 
 ---
 
@@ -634,33 +922,32 @@ test(component): Add test coverage
 
 This project is licensed under the **MIT License** – see [LICENSE](LICENSE) for details.
 
-**MIT License permits:**
+**Permissions:**
 - ✅ Commercial use
 - ✅ Modification
 - ✅ Distribution
 
 **Requirements:**
-- ✔️ Include license notice
-- ✔️ Attribute original author
+- ✔️ License and copyright notice
+- ✔️ Attribution to original author
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Groq** – Fast LLM inference technology
-- **Open Source Community** – scikit-learn, LightGBM, FastAPI, React
-- **Contributors** – Everyone helping improve LifeSync
-- **You** – For your interest and support! ⭐
+- **[Groq](https://www.groq.com/)** – Fast LLM inference technology
+- **[Open Source Community](https://opensource.org/)** – scikit-learn, LightGBM, FastAPI, React
+- **Contributors & Supporters** – Thank you for believing in LifeSync
 
 ---
 
 ## 📞 Contact & Support
 
-**👤 Developer:** Devashish Sharma
+**Developer:** Devashish Sharma
 
 - 🔗 GitHub: [@DevSharma03](https://github.com/DevSharma03)
 - 💼 LinkedIn: [devashish-sharma](https://linkedin.com/in/devashish-sharma)
-- 📧 GitHub Issues: [Report bugs](https://github.com/DevSharma03/LifeSync/issues)
+- 📧 Issues: [Report bugs](https://github.com/DevSharma03/LifeSync/issues)
 - 💬 Discussions: [Ask questions](https://github.com/DevSharma03/LifeSync/discussions)
 
 ---
@@ -671,6 +958,6 @@ This project is licensed under the **MIT License** – see [LICENSE](LICENSE) fo
 
 **Built with ❤️ by [Devashish Sharma](https://github.com/DevSharma03)**
 
-[🔝 Back to Top](#-lifesync--ai-powered-personal-life-management-platform)
+[🔝 Back to Top](#lifesync--ai-powered-personal-life-management-platform)
 
 </div>
