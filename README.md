@@ -1,814 +1,239 @@
-<div align="center">
+# LifeSync
 
-<img src="https://media.giphy.com/media/LnRLrx1CT53LoXyZiy/giphy.gif" width="100" height="100" alt="AI Magic">
+**AI-powered personal life management platform** — unifying health, finance, productivity, and mental wellness tracking into a single, intelligent dashboard.
 
-# ✨ LifeSync
-
-### **AI-Powered Personal Life Management Platform**
-*Transform chaos into balance with intelligent insights across health, finance, productivity, and mental wellness*
-
-<br/>
-
-[![GitHub Stars](https://img.shields.io/github/stars/DevSharma03/LifeSync?style=for-the-badge&logo=github&color=FFD700)](https://github.com/DevSharma03/LifeSync)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=opensourceinitiative)](LICENSE)
-[![Status: Active](https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=for-the-badge&logo=github)](https://github.com/DevSharma03/LifeSync)
-[![Python: 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)](https://www.python.org/)
-[![Node.js: 16+](https://img.shields.io/badge/Node.js-16%2B-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Ready-green?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/)
-
-<br/>
-
-[🚀 Get Started](#-quick-start) • [📚 Documentation](#-core-components) • [🤝 Contributing](#-contributing) • [💬 Discussions](https://github.com/DevSharma03/LifeSync/discussions)
-
-</div>
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-16%2B-339933?logo=node.js)](https://nodejs.org/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python)](https://www.python.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4.4%2B-47A248?logo=mongodb)](https://www.mongodb.com/)
 
 ---
 
-<br/>
+## Table of Contents
 
-## 🎯 The Problem We Solve
-
-<div align="center">
-
-**You juggle 5+ apps to track your life. ❌**
-
-- 📱 Health app here
-- 💰 Finance app there  
-- 📊 Productivity tracker somewhere else
-- 🧠 Mental wellness siloed away
-- ❓ No unified insights connecting the dots
-
-**LifeSync brings it all together. ✅**
-
-One AI-powered platform. Real insights. Actual balance.
-
-</div>
+1. [Introduction](#introduction)
+2. [Demo](#demo)
+3. [Features](#features)
+4. [Architecture](#architecture)
+5. [Working](#working)
+6. [Tech Stack](#tech-stack)
+7. [Project Structure](#project-structure)
+8. [Quick Start](#quick-start)
+9. [Contribution](#contribution)
+10. [Contact](#contact)
+11. [License](#license)
 
 ---
 
-## ✨ What Makes LifeSync Different
+## Introduction
 
-<table>
-<tr>
-<td width="50%">
+LifeSync is a multi-service platform that brings health, finance, productivity, and mental wellness tracking under one roof. Instead of relying on multiple disconnected apps, users complete a short onboarding assessment and receive a unified, continuously updating **Life Score**, along with AI-generated guidance that connects patterns across all four life domains (for example, how sleep quality affects productivity, or how stress correlates with spending habits).
 
-### 🧠 Cold-Start Magic
-**From 15 questions to 45+ features**
+The system is composed of four independent services — a web frontend, a backend orchestrator, a machine learning pipeline, and an LLM-based counselor — that communicate over REST APIs.
 
-Answer just 15 strategic questions, and our Gaussian Mixture Models instantly:
-- Cluster you into behavioral profiles
-- Engineer 45+ predictive features
-- Generate a complete personality profile
+## Demo
 
-No data collection nightmare. Instant personalization.
+> Add screenshots, a walkthrough GIF, or a short demo video below to showcase the dashboard, assessment flow, and AI counselor in action.
 
-</td>
-<td width="50%">
+| Dashboard | Assessment | AI Counselor |
+|---|---|---|
+| ![Dashboard](docs/assets/dashboard.png) | ![Assessment](docs/assets/assessment.png) | ![Chat](docs/assets/chat.png) |
 
-### ⚡ Real-Time Life Scores
-**Dynamic balance tracking**
+<!-- Optional: embed a video demo
+[![Watch the demo](docs/assets/demo-thumbnail.png)](https://your-demo-video-link)
+-->
 
-Our 5-tier LightGBM cascade predicts:
-- 💪 Health Score
-- 💰 Finance Score  
-- 🎯 Productivity Score
-- 🧘 Mental Wellness Score
-- 🌟 **Composite Life Score**
+## Features
 
-Updates after every interaction.
+- **Cold-start profiling** — A 15-question assessment is expanded into 45+ behavioral features using Gaussian Mixture Model (GMM) clustering, so users get a meaningful profile without lengthy data collection.
+- **Real-time life scoring** — A cascading model pipeline computes Health, Finance, Productivity, and Mental Wellness scores, which roll up into a single composite Life Score that updates as users interact with the platform.
+- **AI counselor** — A LangChain-orchestrated agent reasons across all four domains and delivers personalized, context-aware recommendations rather than generic advice.
+- **Secure authentication** — JWT-based session management with password hashing via bcrypt.
+- **Responsive dashboard** — A React-based UI with real-time charts for tracking score trends over time.
 
-</td>
-</tr>
-<tr>
-<td width="50%">
+## Architecture
 
-### 🤖 AI Counselor
-**Your personal advisor**
+LifeSync follows a service-oriented architecture: the frontend talks only to the backend, which in turn orchestrates calls to the ML and LLM services and persists state in MongoDB.
 
-LangChain-powered agent that:
-- Understands context from all life domains
-- Reasons across health, finance, work, wellness
-- Remembers your journey
-- Delivers personalized guidance
-
-Not robotic. Genuinely helpful.
-
-</td>
-<td width="50%">
-
-### 🔗 Connected Insights
-**The dots get connected**
-
-See how:
-- Sleep affects productivity
-- Stress impacts finances
-- Exercise influences mood
-- Choices compound over time
-
-One platform. Complete clarity.
-
-</td>
-</tr>
-</table>
-
----
-
-## 📊 Platform Overview
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                                                                           │
-│                    🎨 LIFESYNC ARCHITECTURE                              │
-│                                                                           │
-│  ┌──────────────────┐                                                   │
-│  │   📱 FRONTEND    │  React 19.1 | Real-time Dashboard                 │
-│  │   (React App)    │  ✨ Beautiful Charts | Live Scores                │
-│  └────────┬─────────┘                                                   │
-│           │                                                             │
-│           │  🔄 REST API (JSON)                                        │
-│           ↓                                                             │
-│  ┌──────────────────────────────────────┐                              │
-│  │  🖥️  BACKEND ORCHESTRATOR            │  Node.js + Express          │
-│  │  ├─ 🔐 JWT Authentication           │  ├─ Port: 4000              │
-│  │  ├─ 📝 User Management              │  ├─ MongoDB Driver          │
-│  │  ├─ 🎯 Score Calculation            │  └─ Service Router          │
-│  │  └─ 🔄 Job Scheduler                │                             │
-│  └────┬────────────────┬────────────────┘                              │
-│       │                │                                               │
-│    ┌──↓──┐          ┌──↓──────────┐                                   │
-│    │      │          │             │                                   │
-│    ↓      ↓          ↓             ↓                                   │
-│  ┌─────┐ ┌──────┐  ┌─────────┐  ┌──────────┐                          │
-│  │ 🗄️  │ │ 🧠   │  │ 🤖      │  │ 💬       │                          │
-│  │ DB  │ │ ML   │  │ LLM     │  │ GROQ API │                          │
-│  │     │ │      │  │ Service │  │          │                          │
-│  │ Mon-│ │FastAPI│ │FastAPI  │  │Claude    │                          │
-│  │oDB  │ │Port  │ │Port 9000│  │Haiku     │                          │
-│  │     │ │8000  │ │         │  │          │                          │
-│  └─────┘ └──────┘  └─────────┘  └──────────┘                          │
-│    📊     🎲🔢      🧠💭      💡🎯                                     │
-│  Profiles Models   Reasoning   Insights                                │
-│                                                                           │
-└─────────────────────────────────────────────────────────────────────────┘
-
-                    ⬇️ DATA FLOW MAGIC ⬇️
-
-    Assessment (15 Q's)  →  GMM Clustering  →  Feature Engineering
-                                ↓
-                        45+ Behavioral Features
-                                ↓
-                    5-Tier LightGBM Cascade
-                    (Health → Mind → Productivity
-                     → Finance → Life Score)
-                                ↓
-                    Real-Time Score Updates
-                                ↓
-            LangChain Agent + User Context
-                                ↓
-        Personalized AI Recommendations
+```mermaid
+flowchart LR
+    FE["Frontend<br/>(React)"] -->|REST / JSON| BE["Backend<br/>(Node.js + Express)"]
+    BE --> DB[("MongoDB")]
+    BE -->|assessment data| ML["ML Service<br/>(FastAPI · GMM + LightGBM)"]
+    BE -->|user query + context| LLM["LLM Service<br/>(FastAPI · LangChain)"]
+    LLM -->|inference| GROQ["Groq API<br/>(Claude Haiku)"]
 ```
 
----
+| Service | Responsibility | Port |
+|---|---|---|
+| Frontend | Dashboard UI, assessment flow, chat interface | 3000 |
+| Backend | Authentication, request orchestration, score persistence, scheduled jobs | 4000 |
+| ML Service | GMM clustering, feature engineering, cascade score prediction | 8000 |
+| LLM Service | Domain-aware prompt routing and AI counselor responses | 9000 |
 
-## 🎮 The User Journey
+## Working
 
-<div align="center">
+1. **Assess** — The user completes a 15-question onboarding assessment.
+2. **Profile** — The ML service clusters the response vector with GMM and engineers 45+ behavioral features.
+3. **Score** — A cascading sequence of LightGBM models converts those features into Health, Finance, Productivity, and Mental Wellness scores, which combine into a composite Life Score.
+4. **Advise** — The LLM service routes the user's query and current scores to a domain-specific prompt, and the AI counselor returns a personalized recommendation.
+5. **Iterate** — Every new interaction updates the user's features and scores, keeping the dashboard current.
 
-### **Step 1️⃣: Assess**
-Answer 15 quick questions about your life
+## Tech Stack
 
-🔽
+| Layer | Technologies |
+|---|---|
+| Frontend | React, React Router, Recharts |
+| Backend | Node.js, Express, Mongoose, JWT, bcrypt |
+| Database | MongoDB |
+| ML Pipeline | Python, FastAPI, scikit-learn, LightGBM, NumPy, Pandas |
+| LLM Engine | LangChain, Groq API (Claude Haiku) |
 
-### **Step 2️⃣: Profile**
-GMM clusters you into a behavioral profile, expanding to 45+ features
+## Project Structure
 
-🔽
-
-### **Step 3️⃣: Score**
-5-tier ML cascade calculates your health, finance, productivity, wellness, and life scores
-
-🔽
-
-### **Step 4️⃣: Advise**
-AI counselor delivers personalized insights across all life domains
-
-🔽
-
-### **Step 5️⃣: Improve**
-Every action updates your scores—watch your life balance evolve
-
-</div>
-
----
-
-## 🛠️ Tech Stack at a Glance
-
-<table align="center">
-<tr>
-<th>Category</th>
-<th>Technologies</th>
-<th>Purpose</th>
-</tr>
-<tr>
-<td>🎨 <strong>Frontend</strong></td>
-<td>
-  <code>React 19.1</code> <br/>
-  <code>React Router 7.8</code> <br/>
-  <code>Recharts 3.1</code> <br/>
-  <code>Lucide React</code>
-</td>
-<td>Beautiful, responsive dashboard with real-time score visualization</td>
-</tr>
-<tr>
-<td>🖥️ <strong>Backend</strong></td>
-<td>
-  <code>Node.js</code> <br/>
-  <code>Express 5.1</code> <br/>
-  <code>Mongoose 8.19</code> <br/>
-  <code>bcryptjs</code> <br/>
-  <code>JWT</code>
-</td>
-<td>Robust REST API, authentication, orchestration, scheduled jobs</td>
-</tr>
-<tr>
-<td>💾 <strong>Database</strong></td>
-<td>
-  <code>MongoDB 4.4+</code>
-</td>
-<td>Flexible document storage for profiles, assessments, scores, history</td>
-</tr>
-<tr>
-<td>🧠 <strong>ML Pipeline</strong></td>
-<td>
-  <code>Python 3.8+</code> <br/>
-  <code>FastAPI</code> <br/>
-  <code>scikit-learn</code> <br/>
-  <code>LightGBM</code> <br/>
-  <code>NumPy/Pandas</code>
-</td>
-<td>GMM clustering, feature engineering, cascade model inference</td>
-</tr>
-<tr>
-<td>🤖 <strong>LLM Engine</strong></td>
-<td>
-  <code>LangChain</code> <br/>
-  <code>Groq API</code> <br/>
-  <code>Claude Haiku</code>
-</td>
-<td>Multi-step reasoning, context-aware recommendations, domain routing</td>
-</tr>
-</table>
-
----
-
-## 📁 Project Structure
+The repository is organized as four independent services plus shared project files. Each service has its own dependencies, environment configuration, and entry point.
 
 ```
 LifeSync/
-│
-├── 📦 Backend/                          
-│   ├── src/
-│   │   ├── 🚀 server.js                    # Server entry point
-│   │   ├── ⚙️  app.js                      # Express middleware & routes
-│   │   ├── config/
-│   │   │   ├── db.js                      # MongoDB connection
-│   │   │   └── env.js                     # Environment setup
-│   │   ├── 🔐 controllers/
-│   │   │   ├── auth.controller.js        # Register, login, JWT logic
-│   │   │   ├── user.controller.js        # User data management
-│   │   │   └── score.controller.js       # Score calculation & retrieval
-│   │   ├── 🛣️  routes/
-│   │   │   ├── auth.routes.js            # Authentication endpoints
-│   │   │   ├── user.routes.js            # User management endpoints
-│   │   │   └── score.routes.js           # Score endpoints
-│   │   ├── 🗂️  models/
-│   │   │   ├── User.js                   # User schema & methods
-│   │   │   ├── Assessment.js             # Assessment responses
-│   │   │   ├── Score.js                  # Life scores
-│   │   │   └── Conversation.js           # Chat history
-│   │   ├── 🛡️  middleware/
-│   │   │   ├── auth.middleware.js        # JWT verification
-│   │   │   ├── errorHandler.js           # Global error handling
-│   │   │   └── validation.js             # Request validation
-│   │   └── ⏰ jobs/
-│   │       └── score.job.js              # Cron-based score updates
-│   ├── .env.example
-│   ├── package.json
-│   └── package-lock.json
-│
-├── 🎨 Frontend/                         
-│   ├── public/
-│   │   ├── index.html
-│   │   ├── favicon.ico
-│   │   └── manifest.json
-│   ├── src/
-│   │   ├── 🎯 index.js
-│   │   ├── 📄 App.js
-│   │   ├── 📑 pages/
-│   │   │   ├── Dashboard.js              # Main life score dashboard
-│   │   │   ├── Assessment.js             # 15-question onboarding
-│   │   │   ├── Chat.js                   # AI counselor chat
-│   │   │   ├── Profile.js                # User profile & insights
-│   │   │   └── Login.js                  # Authentication page
-│   │   ├── 🧩 components/
-│   │   │   ├── Navbar.js                 # Top navigation
-│   │   │   ├── ScoreCard.js              # Individual score display
-│   │   │   ├── LineChart.js              # Score trends
-│   │   │   ├── ChatBox.js                # Message interface
-│   │   │   └── Sidebar.js                # Navigation sidebar
-│   │   ├── 🔌 services/
-│   │   │   ├── api.js                    # Axios instance & HTTP config
-│   │   │   └── auth.js                   # Auth token management
-│   │   ├── 🎨 styles/
-│   │   │   ├── App.css
-│   │   │   ├── Dashboard.css
-│   │   │   └── vars.css                  # Design tokens
-│   │   └── 🏠 utils/
-│   │       ├── formatters.js
-│   │       └── constants.js
-│   ├── .env.example
-│   ├── package.json
-│   └── public/
-│
-├── 🧠 Models/                           # ML Pipeline
-│   ├── 🚀 main.py                        # FastAPI server entry
-│   ├── 📊 preprocessing.py              # Feature engineering logic
-│   ├── models/
-│   │   ├── gmm_cluster.py               # Gaussian Mixture Model
-│   │   ├── cascade_predictor.py         # 5-tier LightGBM cascade
-│   │   └── feature_extractor.py         # Feature computation
-│   ├── data/
-│   │   ├── training_data.csv
-│   │   └── model_config.json
-│   ├── 📓 notebooks/
-│   │   ├── 01_exploratory_analysis.ipynb
-│   │   ├── 02_feature_engineering.ipynb
-│   │   └── 03_model_training.ipynb
-│   ├── requirements.txt
-│   └── .env.example
-│
-├── 💬 LLM/                              # AI Counselor Engine
-│   ├── 🚀 main.py                        # FastAPI server entry
-│   ├── 🤖 agent.py                       # LangChain orchestrator
-│   ├── 📋 prompts/
-│   │   ├── system_prompt.txt            # Main agent personality
-│   │   ├── health_domain.txt            # Health-specific reasoning
-│   │   ├── finance_domain.txt           # Finance-specific reasoning
-│   │   ├── productivity_domain.txt      # Work/productivity guidance
-│   │   └── wellness_domain.txt          # Mental wellness support
-│   ├── 🧠 memory/
-│   │   ├── conversation.py              # Chat history management
-│   │   └── user_context.py              # Dynamic user injection
-│   ├── 🔧 config.py                      # Groq API configuration
-│   ├── requirements.txt
-│   └── .env.example
-│
-├── 📄 README.md                         # This file
-├── 📋 LICENSE                           # MIT License
-├── .gitignore
-└── 🐳 docker-compose.yml (optional)    # Docker orchestration
-
+├── Backend/      # Node.js + Express API — auth, orchestration, scheduled jobs
+├── Frontend/     # React single-page application — dashboard, assessment, chat UI
+├── LLM/          # FastAPI service — LangChain-based AI counselor (Groq)
+├── Models/       # Python ML pipeline — GMM clustering + LightGBM cascade models
+├── LICENSE
+└── README.md
 ```
 
----
+Refer to the README inside each service directory (where available) for implementation-level details.
 
-## 🚀 Quick Start
+## Quick Start
 
-### 📋 Prerequisites
+### Prerequisites
 
-Before you begin, ensure you have:
+- [Node.js](https://nodejs.org/) v16+
+- [Python](https://www.python.org/) 3.8+
+- [MongoDB](https://www.mongodb.com/cloud/atlas) (local instance or Atlas)
+- [Groq API key](https://console.groq.com) (free tier available)
+- [Git](https://git-scm.com/)
 
-```
-✅ Node.js v16+ (https://nodejs.org/)
-✅ Python 3.8+ (https://www.python.org/)
-✅ MongoDB (local or MongoDB Atlas: https://www.mongodb.com/cloud/atlas)
-✅ Groq API Key (free tier: https://console.groq.com)
-✅ Git (https://git-scm.com/)
-```
+### Environment Setup
 
-### 🔧 Environment Setup
+Create a `.env` file in each service directory.
 
-**Create `.env` files for each service:**
-
-#### Backend (Backend/.env)
-```bash
-# 🖥️ Server Config
+**`Backend/.env`**
+```env
 PORT=4000
 NODE_ENV=development
-
-# 💾 Database
 MONGODB_URI=mongodb://localhost:27017/lifesync
-# For MongoDB Atlas: mongodb+srv://user:password@cluster.mongodb.net/lifesync
-
-# 🔐 Security
-JWT_SECRET=your_super_secret_jwt_key_here_minimum_32_characters
-
-# 🔗 Service URLs
+JWT_SECRET=your_jwt_secret_min_32_characters
 ML_SERVICE_URL=http://localhost:8000
 LLM_SERVICE_URL=http://localhost:9000
 ```
 
-#### Frontend (Frontend/.env)
-```bash
-# 🌐 API Endpoints
+**`Frontend/.env`**
+```env
 REACT_APP_API_URL=http://localhost:4000
 REACT_APP_ML_URL=http://localhost:8000
 REACT_APP_LLM_URL=http://localhost:9000
 ```
 
-#### ML Service (Models/.env)
-```bash
-# 💾 Database
+**`Models/.env`**
+```env
 MONGODB_URI=mongodb://localhost:27017/lifesync
-
-# 🧠 Model Config
 MODEL_PATH=./models/
 DEBUG=true
 ```
 
-#### LLM Service (LLM/.env)
-```bash
-# 🤖 LLM Config
-GROQ_API_KEY=your_groq_api_key_here
+**`LLM/.env`**
+```env
+GROQ_API_KEY=your_groq_api_key
 MONGODB_URI=mongodb://localhost:27017/lifesync
 LLM_MODEL=mixtral-8x7b-32768
 TEMPERATURE=0.7
 ```
 
-### ⚡ Installation & Running
+### Installation & Running
 
-**Clone the repository:**
+Clone the repository:
+
 ```bash
 git clone https://github.com/DevSharma03/LifeSync.git
 cd LifeSync
 ```
 
-**Open 5 terminals and run these commands:**
+Start MongoDB:
 
-#### Terminal 1️⃣ — MongoDB
 ```bash
-# Using Docker (recommended)
+# Docker (recommended)
 docker run -d -p 27017:27017 --name lifesync-db mongo:latest
 
-# OR using local MongoDB
+# or a local installation
 mongod --dbpath /path/to/your/data
 ```
 
-#### Terminal 2️⃣ — Backend
+Start the backend:
+
 ```bash
 cd Backend
 npm install
 npm start
-# 🎉 Backend running on http://localhost:4000
+# Runs on http://localhost:4000
 ```
 
-#### Terminal 3️⃣ — Frontend
+Start the frontend:
+
 ```bash
 cd Frontend
 npm install
 npm start
-# 🎉 Frontend opens on http://localhost:3000
+# Runs on http://localhost:3000
 ```
 
-#### Terminal 4️⃣ — ML Service
+Start the ML service:
+
 ```bash
 cd Models
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
-# 🎉 ML API on http://localhost:8000/docs (Swagger UI)
+# API docs available at http://localhost:8000/docs
 ```
 
-#### Terminal 5️⃣ — LLM Service
+Start the LLM service:
+
 ```bash
 cd LLM
 pip install -r requirements.txt
 python main.py
-# 🎉 LLM API running on http://localhost:9000
+# Runs on http://localhost:9000
 ```
 
-**That's it! 🎊**
-- Dashboard: [http://localhost:3000](http://localhost:3000)
-- API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+Once all four services are running, open **http://localhost:3000** to use LifeSync.
 
----
+## Contribution
 
-## 🧠 Core Components Explained
+Contributions are welcome.
 
-### 1. **GMM Cold-Start Profiler** 🎲
-<details open>
-<summary><strong>Click to expand</strong></summary>
+1. Fork the repository and create a feature branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+2. Make your changes, following the existing code style and adding comments for non-trivial logic.
+3. Commit using a clear, descriptive message:
+   ```bash
+   git commit -m "feat: add your feature"
+   ```
+4. Push your branch and open a pull request against `main`, describing the change and its motivation.
 
-**What it does:**
-- Takes 15 assessment answers
-- Uses Gaussian Mixture Modeling to cluster users
-- Outputs behavioral profile + probability distribution
+Please open an [issue](https://github.com/DevSharma03/LifeSync/issues) for bugs or feature requests before submitting large changes.
 
-**Why it matters:**
-- ⚡ Instant user profiling (no cold-start problem)
-- 🎯 Personalization from day one
-- 🔬 Mathematically rigorous clustering
+## Contact
 
-**Technical Details:**
-- Input: 15-dimensional assessment vector
-- Algorithm: GMM with 12 components
-- Output: Cluster ID + feature vector (45+ dimensions)
+| Channel | Link |
+|---|---|
+| GitHub | [@DevSharma03](https://github.com/DevSharma03) |
+| LinkedIn | [devashish-sharma](https://linkedin.com/in/devashish-sharma) |
+| Issues | [Report a bug](https://github.com/DevSharma03/LifeSync/issues) |
+| Discussions | [Join the conversation](https://github.com/DevSharma03/LifeSync/discussions) |
 
-```python
-# Example Usage
-from Models.preprocessing import GMM_Profiler
+## License
 
-profiler = GMM_Profiler(n_clusters=12)
-profile = profiler.cluster(assessment_vector)
-# Returns: { cluster: 3, features: [...], probability: 0.89 }
-```
-
-</details>
-
----
-
-### 2. **Feature Engineering Pipeline** 🔧
-<details open>
-<summary><strong>Click to expand</strong></summary>
-
-**What it does:**
-- Expands 15 questions into 45+ behavioral features
-- Applies domain-specific transformations
-- Creates composite indices
-
-**Why it matters:**
-- 📈 Dense feature vectors improve ML accuracy
-- 🎯 Captures nuanced behavioral patterns
-- 🔗 Enables cross-domain insights
-
-**Features Generated:**
-
-| Domain | Sample Features | Count |
-|--------|---|---|
-| 💪 **Health** | Sleep Quality Index, Exercise Consistency, Nutrition Score | 12 |
-| 💰 **Finance** | Savings Rate, Debt Ratio, Investment Diversity | 10 |
-| 🎯 **Productivity** | Focus Hours/Week, Goal Completion %, Context Switches | 11 |
-| 🧘 **Wellness** | Stress Resilience, Mindfulness Score, Social Engagement | 12 |
-
-</details>
-
----
-
-### 3. **Cascade LightGBM Models** 🔀
-<details open>
-<summary><strong>Click to expand</strong></summary>
-
-**Architecture:**
-```
-Features (45+)
-    ↓
-[Model 1] → Health Score
-    ↓
-[Model 2] → Wellness Score (uses Health output)
-    ↓
-[Model 3] → Productivity Score
-    ↓
-[Model 4] → Finance Score
-    ↓
-[Model 5] → Life Score (uses all previous outputs)
-```
-
-**Why Cascade?**
-- 🎯 Preserves domain dependencies
-- 📊 Improves prediction accuracy
-- 🔄 Enables recursive refinement
-
-**Real-Time Updates:**
-- After each user action, features update
-- Cascade re-runs (milliseconds)
-- Life scores refresh instantly
-
-</details>
-
----
-
-### 4. **LangChain AI Counselor** 🤖
-<details open>
-<summary><strong>Click to expand</strong></summary>
-
-**Components:**
-1. **Memory System**: Stores conversation history + user context
-2. **Prompt Router**: Selects domain-specific templates
-3. **LLM Integration**: Claude Haiku via Groq API
-4. **Context Injector**: Injects real-time user data
-
-**Multi-Step Reasoning:**
-
-```
-User Query
-    ↓
-[Analyze Intent] → Determine domain(s)
-    ↓
-[Retrieve Context] → Fetch user profile + scores
-    ↓
-[Route Prompt] → Select domain-specific template
-    ↓
-[Chain Reasoning] → LLM performs multi-step analysis
-    ↓
-[Generate Response] → Personalized, multi-step guidance
-    ↓
-User Receives Insight
-```
-
-**Example:**
-```
-User: "I'm stressed but also want to save more money"
-
-System:
-1. Identifies domains: Wellness + Finance
-2. Fetches user's wellness_score (0.65) & finance_score (0.71)
-3. Routes to combined wellness-finance prompt
-4. LLM reasons about stress-savings relationship
-5. Delivers nuanced recommendation
-
-Output: "High stress often leads to emotional spending. 
-Let's tackle stress first with 10-min daily meditation, 
-which research shows reduces impulsive purchases by 23%..."
-```
-
-</details>
-
----
-
-## 📊 API Endpoints
-
-### Authentication 🔐
-```
-POST /api/auth/register    # Create new user
-POST /api/auth/login       # User login
-GET  /api/auth/profile     # Get user profile
-```
-
-### Scores 📈
-```
-GET  /api/scores           # Get latest scores
-POST /api/scores/update    # Trigger score recalculation
-GET  /api/scores/history   # Get score trends
-```
-
-### Chat 💬
-```
-POST /api/chat             # Send message to AI counselor
-GET  /api/chat/history     # Get conversation history
-```
-
-### ML Service 🧠
-```
-POST /infer-profile        # Generate profile from assessment
-POST /predict-scores       # Predict life scores
-GET  /docs                 # Swagger API documentation
-```
-
----
-
-## 🎯 Key Features Breakdown
-
-| Feature | What It Does | Why It Rocks |
-|---------|---|---|
-| 🧪 **Cold-Start Profiling** | 15 Q's → 45+ features | Instant personalization, no data collection nightmare |
-| 📊 **Real-Time Scoring** | Updates after each action | See how choices affect life balance immediately |
-| 🤖 **AI Counselor** | Multi-step reasoning assistant | Connects all life domains, not siloed advice |
-| 🔐 **JWT Authentication** | Secure token-based auth | Enterprise-grade security |
-| 💾 **MongoDB Storage** | Persistent data with indexes | Fast queries, scalable storage |
-| 📱 **Responsive UI** | Mobile-first React dashboard | Beautiful on all devices |
-| ⚡ **Real-Time Updates** | WebSocket-ready architecture | Live score changes |
-| 🧠 **Domain-Specific AI** | Specialized prompts per domain | Context-aware, nuanced responses |
-
----
-
-## 🗺️ Roadmap
-
-### ✅ Phase 1: MVP (Current)
-- [x] User authentication & profiles
-- [x] 15-question assessment
-- [x] GMM clustering
-- [x] Feature engineering
-- [x] LightGBM cascade models
-- [x] Real-time score updates
-- [x] Groq API integration
-- [x] Basic AI counselor
-
-### 🔜 Phase 2: Personalization (Q3 2026)
-- [ ] Advanced temporal feature engineering
-- [ ] Wearable data integration (Apple Health, Fitbit)
-- [ ] RAG-based prompt generation
-- [ ] Custom user profiles per domain
-
-### 🔜 Phase 3: Social (Q4 2026)
-- [ ] Peer comparison & leaderboards
-- [ ] Group challenges
-- [ ] Social sharing
-- [ ] Community insights
-
-### 🔜 Phase 4: Mobile (2027)
-- [ ] React Native app
-- [ ] Offline-first architecture
-- [ ] Push notifications
-- [ ] Wearable app support
-
----
-
-## 🤝 Contributing
-
-We ❤️ contributions! Here's how to get involved:
-
-### 1. Fork & Clone
-```bash
-git clone https://github.com/YOUR_USERNAME/LifeSync.git
-cd LifeSync
-git checkout -b feature/amazing-feature
-```
-
-### 2. Make Your Changes
-```bash
-# Code with style
-# Add comments for complex logic
-# Follow existing conventions
-```
-
-### 3. Commit with Conventional Commits
-```bash
-git commit -m "feat: Add amazing feature
-
-- Detail about what you added
-- Why it matters
-- Closes #123"
-```
-
-### 4. Push & Open PR
-```bash
-git push origin feature/amazing-feature
-# Open PR on GitHub with clear description
-```
-
-### 📋 Code Guidelines
-- ✅ Use camelCase for JS/Python variables
-- ✅ Keep functions focused (single responsibility)
-- ✅ Add meaningful comments
-- ✅ Write tests for new features
-- ✅ Update documentation
-
-### 🐛 Reporting Bugs
-Found an issue? [Open a bug report](https://github.com/DevSharma03/LifeSync/issues/new) with:
-- Clear description
-- Steps to reproduce
-- Expected vs actual behavior
-- Environment details
-
----
-
-## 📞 Support & Contact
-
-<div align="center">
-
-**Got questions? We're here to help!**
-
-| Channel | Contact |
-|---------|---------|
-| 🔗 GitHub | [@DevSharma03](https://github.com/DevSharma03) |
-| 💼 LinkedIn | [devashish-sharma](https://linkedin.com/in/devashish-sharma) |
-| 📧 Issues | [Report bugs](https://github.com/DevSharma03/LifeSync/issues) |
-| 💬 Discussions | [Join community](https://github.com/DevSharma03/LifeSync/discussions) |
-
-</div>
-
----
-
-## 📄 License
-
-MIT License © 2026 Devashish Sharma
-
-You're free to use, modify, and distribute LifeSync in personal and commercial projects. See [LICENSE](LICENSE) for details.
-
----
-
-<div align="center">
-
-## 🌟 Show Your Support
-
-If LifeSync helped you achieve better life balance, please:
-
-⭐ **Star the repository** on GitHub  
-🍴 **Fork and contribute** new features  
-📢 **Share** with your network  
-💬 **Join discussions** and help others  
-
-<br/>
-
-### Built with ❤️ by [Devashish Sharma](https://github.com/DevSharma03)
-
-**Version:** 1.0.0  
-**Last Updated:** June 2026  
-**Status:** 🚀 Actively Maintained
-
-<br/>
-
-<img src="https://media.giphy.com/media/hvRJCLFzcasrng815IWW6HqWmwKPttkzt/giphy.gif" width="50" alt="success">
-
-### Ready to transform your life? [Get started now →](https://github.com/DevSharma03/LifeSync#-quick-start)
-
-</div>
+This project is licensed under the [MIT License](LICENSE).
